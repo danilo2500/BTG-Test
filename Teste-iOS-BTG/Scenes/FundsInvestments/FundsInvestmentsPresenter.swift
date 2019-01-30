@@ -15,7 +15,7 @@ import UIKit
 
 protocol FundsInvestmentsPresentationLogic
 {
-    func presentSomething(response: FundsInvestments.Something.Response)
+    func presentFunds(response: FundsInvestments.Funds.Response)
 }
 
 class FundsInvestmentsPresenter: FundsInvestmentsPresentationLogic
@@ -24,9 +24,9 @@ class FundsInvestmentsPresenter: FundsInvestmentsPresentationLogic
     
     // MARK: Do something
     
-    func presentSomething(response: FundsInvestments.Something.Response)
+    func presentFunds(response: FundsInvestments.Funds.Response)
     {
-        let viewModel = FundsInvestments.Something.ViewModel()
+        let viewModel = FundsInvestments.Funds.ViewModel()
         viewController?.displayFetchedFunds(viewModel: viewModel)
     }
 }

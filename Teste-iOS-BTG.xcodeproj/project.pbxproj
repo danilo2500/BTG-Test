@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		432182114F250AAF20481BCA /* Pods_Teste_iOS_BTG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0635458FEA71395B02501A08 /* Pods_Teste_iOS_BTG.framework */; };
+		555EDB902201F52900977D96 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555EDB8F2201F52900977D96 /* Constants.swift */; };
 		556C30EF220142DF00CCCFC5 /* FundsInvestments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556C30EE220142DF00CCCFC5 /* FundsInvestments.storyboard */; };
 		556C30F12201432C00CCCFC5 /* FundsInvestmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C30F02201432C00CCCFC5 /* FundsInvestmentsViewController.swift */; };
 		556C30F32201446000CCCFC5 /* FundsInvestmentsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C30F22201446000CCCFC5 /* FundsInvestmentsInteractor.swift */; };
@@ -15,7 +16,7 @@
 		556C30F72201452600CCCFC5 /* FundsInvestmentsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C30F62201452600CCCFC5 /* FundsInvestmentsModels.swift */; };
 		556C30F92201455A00CCCFC5 /* FundsInvestmentsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C30F82201455900CCCFC5 /* FundsInvestmentsPresenter.swift */; };
 		556C30FB2201459C00CCCFC5 /* FundsInvestmentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C30FA2201459C00CCCFC5 /* FundsInvestmentRouter.swift */; };
-		556C30FE2201C8CE00CCCFC5 /* Funds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C30FD2201C8CE00CCCFC5 /* Funds.swift */; };
+		556C30FE2201C8CE00CCCFC5 /* Fund.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C30FD2201C8CE00CCCFC5 /* Fund.swift */; };
 		A279EF9B21B1667600E39E1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A279EF9A21B1667600E39E1F /* AppDelegate.swift */; };
 		A279EF9D21B1667600E39E1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A279EF9C21B1667600E39E1F /* ViewController.swift */; };
 		A279EFA021B1667600E39E1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A279EF9E21B1667600E39E1F /* Main.storyboard */; };
@@ -65,6 +66,7 @@
 		15CD51F95B012BDE2D1E53CF /* Pods_Teste_iOS_BTGTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Teste_iOS_BTGTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21045B7C696277A76C5F05C2 /* Pods-Teste-iOS-BTGTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teste-iOS-BTGTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Teste-iOS-BTGTests/Pods-Teste-iOS-BTGTests.debug.xcconfig"; sourceTree = "<group>"; };
 		28573924DC0E8160189E3162 /* Pods-Teste-iOS-BTGUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teste-iOS-BTGUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Teste-iOS-BTGUITests/Pods-Teste-iOS-BTGUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		555EDB8F2201F52900977D96 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		556C30EE220142DF00CCCFC5 /* FundsInvestments.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FundsInvestments.storyboard; sourceTree = "<group>"; };
 		556C30F02201432C00CCCFC5 /* FundsInvestmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsInvestmentsViewController.swift; sourceTree = "<group>"; };
 		556C30F22201446000CCCFC5 /* FundsInvestmentsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsInvestmentsInteractor.swift; sourceTree = "<group>"; };
@@ -72,7 +74,7 @@
 		556C30F62201452600CCCFC5 /* FundsInvestmentsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsInvestmentsModels.swift; sourceTree = "<group>"; };
 		556C30F82201455900CCCFC5 /* FundsInvestmentsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsInvestmentsPresenter.swift; sourceTree = "<group>"; };
 		556C30FA2201459C00CCCFC5 /* FundsInvestmentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsInvestmentRouter.swift; sourceTree = "<group>"; };
-		556C30FD2201C8CE00CCCFC5 /* Funds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Funds.swift; sourceTree = "<group>"; };
+		556C30FD2201C8CE00CCCFC5 /* Fund.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fund.swift; sourceTree = "<group>"; };
 		A279EF9721B1667600E39E1F /* Teste-iOS-BTG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Teste-iOS-BTG.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A279EF9A21B1667600E39E1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A279EF9C21B1667600E39E1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -158,9 +160,25 @@
 		556C30FC2201C8B800CCCFC5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				556C30FD2201C8CE00CCCFC5 /* Funds.swift */,
+				556C30FD2201C8CE00CCCFC5 /* Fund.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		556C30FF2201F2D200CCCFC5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				556C31002201F2DD00CCCFC5 /* Networking */,
+				555EDB8F2201F52900977D96 /* Constants.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		556C31002201F2DD00CCCFC5 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		65B3BA387D96BD9C00DA3CF3 /* Pods */ = {
@@ -201,6 +219,7 @@
 		A279EF9921B1667600E39E1F /* Teste-iOS-BTG */ = {
 			isa = PBXGroup;
 			children = (
+				556C30FF2201F2D200CCCFC5 /* Supporting Files */,
 				556C30FC2201C8B800CCCFC5 /* Models */,
 				556C30E82201332900CCCFC5 /* Scenes */,
 				A279EFE321B1683F00E39E1F /* Colors.swift */,
@@ -462,16 +481,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Teste-iOS-BTG/Pods-Teste-iOS-BTG-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -511,12 +526,13 @@
 				A279EFE421B1683F00E39E1F /* Colors.swift in Sources */,
 				556C30F92201455A00CCCFC5 /* FundsInvestmentsPresenter.swift in Sources */,
 				556C30F32201446000CCCFC5 /* FundsInvestmentsInteractor.swift in Sources */,
-				556C30FE2201C8CE00CCCFC5 /* Funds.swift in Sources */,
+				556C30FE2201C8CE00CCCFC5 /* Fund.swift in Sources */,
 				556C30F5220144B200CCCFC5 /* FundsInvestmentWorker.swift in Sources */,
 				556C30F12201432C00CCCFC5 /* FundsInvestmentsViewController.swift in Sources */,
 				A279EF9B21B1667600E39E1F /* AppDelegate.swift in Sources */,
 				556C30FB2201459C00CCCFC5 /* FundsInvestmentRouter.swift in Sources */,
 				556C30F72201452600CCCFC5 /* FundsInvestmentsModels.swift in Sources */,
+				555EDB902201F52900977D96 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

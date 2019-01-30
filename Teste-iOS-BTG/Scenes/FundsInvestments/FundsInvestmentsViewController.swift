@@ -13,10 +13,10 @@
 import UIKit
 
 protocol FundsInvestmentsDisplayLogic: class {
-    func displayFetchedFunds(viewModel: FundsInvestments.Something.ViewModel)
+    func displayFetchedFunds(viewModel: FundsInvestments.Funds.ViewModel)
 }
 
-class FundsInvestmentsViewController: UITableViewController, FundsInvestmentsDisplayLogic {
+class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayLogic {
     var interactor: FundsInvestmentsBusinessLogic?
     var router: (NSObjectProtocol & FundsInvestmentsRoutingLogic & FundsInvestmentsDataPassing)?
     
@@ -36,8 +36,7 @@ class FundsInvestmentsViewController: UITableViewController, FundsInvestmentsDis
     
     // MARK: Setup
     
-    private func setup()
-    {
+    private func setup() {
         let viewController = self
         let interactor = FundsInvestmentsInteractor()
         let presenter = FundsInvestmentsPresenter()
@@ -64,17 +63,12 @@ class FundsInvestmentsViewController: UITableViewController, FundsInvestmentsDis
     
     // MARK: View lifecycle
     
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
-        doSomething()
+        fetchFunds()
     }
     
-    // MARK: Do something
-    
-    //@IBOutlet weak var nameTextField: UITextField!
-    
-    func doSomething() {
+    func fetchFunds() {
         let request = FundsInvestments.Funds.Request()
         interactor?.fetchFunds(request: request)
     }

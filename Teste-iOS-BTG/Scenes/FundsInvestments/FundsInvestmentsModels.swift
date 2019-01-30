@@ -14,16 +14,18 @@
 import UIKit
 
 enum FundsInvestments {
-    // MARK: Use cases
     
     enum Funds {
         struct Request {
-            let baseUrl: String
-            let params: [String: Any]?
+            let pathURL = "/services/public/funds/"
         }
+        
         struct Response {
-            
+            let funds: [Fund]?
+            let error: Bool
+            let message: String?
         }
+        
         struct ViewModel {
             
         }

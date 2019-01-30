@@ -14,13 +14,13 @@ import UIKit
 
 protocol FundsInvestmentsBusinessLogic {
     
-    func fetchFunds(request: FundsInvestments.Something.Request)
+    func fetchFunds(request: FundsInvestments.Funds.Request)
     
 }
 
 protocol FundsInvestmentsDataStore {
 
-    var funds: Funds { get }
+    var funds: [Fund]? { get }
 
 }
 
@@ -28,16 +28,15 @@ class FundsInvestmentsInteractor: FundsInvestmentsBusinessLogic, FundsInvestment
     
     var presenter: FundsInvestmentsPresentationLogic?
     var worker: FundsInvestmentsWorker?
-    var funds: Funds?
+    var funds: [Fund]?
     
     // MARK: Fetch Funds
     
-    func fetchFunds(request: FundsInvestments.Something.Request) {
+    func fetchFunds(request: FundsInvestments.Funds.Request) {
         worker = FundsInvestmentsWorker()
-        worker?.doSomeWork()
-        
-        let response = FundsInvestments.Something.Response()
-        presenter?.presentSomething(response: response)
+        worker?.fetchFunds(request: request, completion: { [weak self] (response) in
+            self?.presenter?.presentFunds(response: response)
+        })
     }
     
 }
