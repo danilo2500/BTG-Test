@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		556C30EF220142DF00CCCFC5 /* FundsInvestments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556C30EE220142DF00CCCFC5 /* FundsInvestments.storyboard */; };
+		556C30F12201432C00CCCFC5 /* FundsInvestmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C30F02201432C00CCCFC5 /* FundsInvestmentsViewController.swift */; };
+		556C30F32201446000CCCFC5 /* FundsInvestmentsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C30F22201446000CCCFC5 /* FundsInvestmentsInteractor.swift */; };
+		556C30F5220144B200CCCFC5 /* FundsInvestmentWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C30F4220144B200CCCFC5 /* FundsInvestmentWorker.swift */; };
+		556C30F72201452600CCCFC5 /* FundsInvestmentsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C30F62201452600CCCFC5 /* FundsInvestmentsModels.swift */; };
+		556C30F92201455A00CCCFC5 /* FundsInvestmentsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C30F82201455900CCCFC5 /* FundsInvestmentsPresenter.swift */; };
+		556C30FB2201459C00CCCFC5 /* FundsInvestmentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C30FA2201459C00CCCFC5 /* FundsInvestmentRouter.swift */; };
 		A279EF9B21B1667600E39E1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A279EF9A21B1667600E39E1F /* AppDelegate.swift */; };
 		A279EF9D21B1667600E39E1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A279EF9C21B1667600E39E1F /* ViewController.swift */; };
 		A279EFA021B1667600E39E1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A279EF9E21B1667600E39E1F /* Main.storyboard */; };
@@ -48,6 +55,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		556C30EE220142DF00CCCFC5 /* FundsInvestments.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FundsInvestments.storyboard; sourceTree = "<group>"; };
+		556C30F02201432C00CCCFC5 /* FundsInvestmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsInvestmentsViewController.swift; sourceTree = "<group>"; };
+		556C30F22201446000CCCFC5 /* FundsInvestmentsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsInvestmentsInteractor.swift; sourceTree = "<group>"; };
+		556C30F4220144B200CCCFC5 /* FundsInvestmentWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsInvestmentWorker.swift; sourceTree = "<group>"; };
+		556C30F62201452600CCCFC5 /* FundsInvestmentsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsInvestmentsModels.swift; sourceTree = "<group>"; };
+		556C30F82201455900CCCFC5 /* FundsInvestmentsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsInvestmentsPresenter.swift; sourceTree = "<group>"; };
+		556C30FA2201459C00CCCFC5 /* FundsInvestmentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsInvestmentRouter.swift; sourceTree = "<group>"; };
 		A279EF9721B1667600E39E1F /* Teste-iOS-BTG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Teste-iOS-BTG.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A279EF9A21B1667600E39E1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A279EF9C21B1667600E39E1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +116,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		556C30E82201332900CCCFC5 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				556C30E92201334400CCCFC5 /* FundsInvestments */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		556C30E92201334400CCCFC5 /* FundsInvestments */ = {
+			isa = PBXGroup;
+			children = (
+				556C30EE220142DF00CCCFC5 /* FundsInvestments.storyboard */,
+				556C30F22201446000CCCFC5 /* FundsInvestmentsInteractor.swift */,
+				556C30F62201452600CCCFC5 /* FundsInvestmentsModels.swift */,
+				556C30F82201455900CCCFC5 /* FundsInvestmentsPresenter.swift */,
+				556C30FA2201459C00CCCFC5 /* FundsInvestmentRouter.swift */,
+				556C30F02201432C00CCCFC5 /* FundsInvestmentsViewController.swift */,
+				556C30F4220144B200CCCFC5 /* FundsInvestmentWorker.swift */,
+			);
+			path = FundsInvestments;
+			sourceTree = "<group>";
+		};
 		A279EF8E21B1667600E39E1F = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +161,7 @@
 		A279EF9921B1667600E39E1F /* Teste-iOS-BTG */ = {
 			isa = PBXGroup;
 			children = (
+				556C30E82201332900CCCFC5 /* Scenes */,
 				A279EFE321B1683F00E39E1F /* Colors.swift */,
 				A279EF9A21B1667600E39E1F /* AppDelegate.swift */,
 				A279EF9C21B1667600E39E1F /* ViewController.swift */,
@@ -281,6 +318,7 @@
 			files = (
 				A279EFD721B1672300E39E1F /* SourceSansPro-LightIt.otf in Resources */,
 				A279EFDF21B1672300E39E1F /* FontAwesome.ttf in Resources */,
+				556C30EF220142DF00CCCFC5 /* FundsInvestments.storyboard in Resources */,
 				A279EFDC21B1672300E39E1F /* SourceSansPro-BoldIt.otf in Resources */,
 				A279EFD821B1672300E39E1F /* SourceSansPro-SemiboldIt.otf in Resources */,
 				A279EFE121B1672300E39E1F /* SourceSansPro-Semibold.otf in Resources */,
@@ -321,7 +359,13 @@
 			files = (
 				A279EF9D21B1667600E39E1F /* ViewController.swift in Sources */,
 				A279EFE421B1683F00E39E1F /* Colors.swift in Sources */,
+				556C30F92201455A00CCCFC5 /* FundsInvestmentsPresenter.swift in Sources */,
+				556C30F32201446000CCCFC5 /* FundsInvestmentsInteractor.swift in Sources */,
+				556C30F5220144B200CCCFC5 /* FundsInvestmentWorker.swift in Sources */,
+				556C30F12201432C00CCCFC5 /* FundsInvestmentsViewController.swift in Sources */,
 				A279EF9B21B1667600E39E1F /* AppDelegate.swift in Sources */,
+				556C30FB2201459C00CCCFC5 /* FundsInvestmentRouter.swift in Sources */,
+				556C30F72201452600CCCFC5 /* FundsInvestmentsModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,7 +541,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FU2YTD6J36;
+				DEVELOPMENT_TEAM = VR6459U6TK;
 				INFOPLIST_FILE = "Teste-iOS-BTG/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -515,7 +559,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FU2YTD6J36;
+				DEVELOPMENT_TEAM = VR6459U6TK;
 				INFOPLIST_FILE = "Teste-iOS-BTG/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
