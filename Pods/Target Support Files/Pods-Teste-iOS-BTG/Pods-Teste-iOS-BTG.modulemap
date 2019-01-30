@@ -1,0 +1,6 @@
+framework module Pods_Teste_iOS_BTG {
+  umbrella header "Pods-Teste-iOS-BTG-umbrella.h"
+
+  export *
+  module * { export * }
+}
