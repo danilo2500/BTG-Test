@@ -6,6 +6,7 @@ target 'Teste-iOS-BTG' do
   use_frameworks!
 
   # Pods for Teste-iOS-BTG
+  pod 'Moya'
 
   target 'Teste-iOS-BTGTests' do
     inherit! :search_paths
