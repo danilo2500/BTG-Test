@@ -12,9 +12,8 @@
 
 import UIKit
 
-class FundsInvestmentsWorker
-{
-    func doSomeWork()
-    {
+class FundsInvestmentsWorker {
+    func fetchFunds(request: FundsInvestments.Funds.Request, completion: @escaping (FundsInvestments.Funds.Request) -> Void ) {
+        
     }
 }

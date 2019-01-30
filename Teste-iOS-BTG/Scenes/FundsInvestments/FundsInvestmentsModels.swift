@@ -13,20 +13,19 @@
 
 import UIKit
 
-enum FundsInvestments
-{
+enum FundsInvestments {
     // MARK: Use cases
     
-    enum Something
-    {
-        struct Request
-        {
+    enum Funds {
+        struct Request {
+            let baseUrl: String
+            let params: [String: Any]?
         }
-        struct Response
-        {
+        struct Response {
+            
         }
-        struct ViewModel
-        {
+        struct ViewModel {
+            
         }
     }
 }

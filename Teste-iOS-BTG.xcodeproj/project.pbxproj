@@ -14,6 +14,7 @@
 		556C30F72201452600CCCFC5 /* FundsInvestmentsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C30F62201452600CCCFC5 /* FundsInvestmentsModels.swift */; };
 		556C30F92201455A00CCCFC5 /* FundsInvestmentsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C30F82201455900CCCFC5 /* FundsInvestmentsPresenter.swift */; };
 		556C30FB2201459C00CCCFC5 /* FundsInvestmentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C30FA2201459C00CCCFC5 /* FundsInvestmentRouter.swift */; };
+		556C30FE2201C8CE00CCCFC5 /* Funds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C30FD2201C8CE00CCCFC5 /* Funds.swift */; };
 		A279EF9B21B1667600E39E1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A279EF9A21B1667600E39E1F /* AppDelegate.swift */; };
 		A279EF9D21B1667600E39E1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A279EF9C21B1667600E39E1F /* ViewController.swift */; };
 		A279EFA021B1667600E39E1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A279EF9E21B1667600E39E1F /* Main.storyboard */; };
@@ -62,6 +63,7 @@
 		556C30F62201452600CCCFC5 /* FundsInvestmentsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsInvestmentsModels.swift; sourceTree = "<group>"; };
 		556C30F82201455900CCCFC5 /* FundsInvestmentsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsInvestmentsPresenter.swift; sourceTree = "<group>"; };
 		556C30FA2201459C00CCCFC5 /* FundsInvestmentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsInvestmentRouter.swift; sourceTree = "<group>"; };
+		556C30FD2201C8CE00CCCFC5 /* Funds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Funds.swift; sourceTree = "<group>"; };
 		A279EF9721B1667600E39E1F /* Teste-iOS-BTG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Teste-iOS-BTG.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A279EF9A21B1667600E39E1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A279EF9C21B1667600E39E1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +140,14 @@
 			path = FundsInvestments;
 			sourceTree = "<group>";
 		};
+		556C30FC2201C8B800CCCFC5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				556C30FD2201C8CE00CCCFC5 /* Funds.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		A279EF8E21B1667600E39E1F = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +171,7 @@
 		A279EF9921B1667600E39E1F /* Teste-iOS-BTG */ = {
 			isa = PBXGroup;
 			children = (
+				556C30FC2201C8B800CCCFC5 /* Models */,
 				556C30E82201332900CCCFC5 /* Scenes */,
 				A279EFE321B1683F00E39E1F /* Colors.swift */,
 				A279EF9A21B1667600E39E1F /* AppDelegate.swift */,
@@ -361,6 +372,7 @@
 				A279EFE421B1683F00E39E1F /* Colors.swift in Sources */,
 				556C30F92201455A00CCCFC5 /* FundsInvestmentsPresenter.swift in Sources */,
 				556C30F32201446000CCCFC5 /* FundsInvestmentsInteractor.swift in Sources */,
+				556C30FE2201C8CE00CCCFC5 /* Funds.swift in Sources */,
 				556C30F5220144B200CCCFC5 /* FundsInvestmentWorker.swift in Sources */,
 				556C30F12201432C00CCCFC5 /* FundsInvestmentsViewController.swift in Sources */,
 				A279EF9B21B1667600E39E1F /* AppDelegate.swift in Sources */,
@@ -543,6 +555,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VR6459U6TK;
 				INFOPLIST_FILE = "Teste-iOS-BTG/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -561,6 +574,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VR6459U6TK;
 				INFOPLIST_FILE = "Teste-iOS-BTG/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -580,6 +594,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FU2YTD6J36;
 				INFOPLIST_FILE = "Teste-iOS-BTGTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -601,6 +616,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FU2YTD6J36;
 				INFOPLIST_FILE = "Teste-iOS-BTGTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -621,6 +637,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FU2YTD6J36;
 				INFOPLIST_FILE = "Teste-iOS-BTGUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -641,6 +658,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FU2YTD6J36;
 				INFOPLIST_FILE = "Teste-iOS-BTGUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -12,30 +12,32 @@
 
 import UIKit
 
-protocol FundsInvestmentsBusinessLogic
-{
-    func doSomething(request: FundsInvestments.Something.Request)
+protocol FundsInvestmentsBusinessLogic {
+    
+    func fetchFunds(request: FundsInvestments.Something.Request)
+    
 }
 
-protocol FundsInvestmentsDataStore
-{
-    //var name: String { get set }
+protocol FundsInvestmentsDataStore {
+
+    var funds: Funds { get }
+
 }
 
-class FundsInvestmentsInteractor: FundsInvestmentsBusinessLogic, FundsInvestmentsDataStore
-{
+class FundsInvestmentsInteractor: FundsInvestmentsBusinessLogic, FundsInvestmentsDataStore {
+    
     var presenter: FundsInvestmentsPresentationLogic?
     var worker: FundsInvestmentsWorker?
-    //var name: String = ""
+    var funds: Funds?
     
-    // MARK: Do something
+    // MARK: Fetch Funds
     
-    func doSomething(request: FundsInvestments.Something.Request)
-    {
+    func fetchFunds(request: FundsInvestments.Something.Request) {
         worker = FundsInvestmentsWorker()
         worker?.doSomeWork()
         
         let response = FundsInvestments.Something.Response()
         presenter?.presentSomething(response: response)
     }
+    
 }

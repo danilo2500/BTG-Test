@@ -74,14 +74,12 @@ class FundsInvestmentsViewController: UITableViewController, FundsInvestmentsDis
     
     //@IBOutlet weak var nameTextField: UITextField!
     
-    func doSomething()
-    {
-        let request = FundsInvestments.Something.Request()
-        interactor?.doSomething(request: request)
+    func doSomething() {
+        let request = FundsInvestments.Funds.Request()
+        interactor?.fetchFunds(request: request)
     }
     
-    func displayFetchedFunds(viewModel: FundsInvestments.Something.ViewModel)
-    {
+    func displayFetchedFunds(viewModel: FundsInvestments.Funds.ViewModel) {
         //nameTextField.text = viewModel.name
     }
 }
