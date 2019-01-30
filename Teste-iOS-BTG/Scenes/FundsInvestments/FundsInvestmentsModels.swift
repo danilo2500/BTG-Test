@@ -16,9 +16,7 @@ import UIKit
 enum FundsInvestments {
     
     enum Funds {
-        struct Request {
-            let pathURL = "/services/public/funds/"
-        }
+        struct Request {}
         
         struct Response {
             let funds: [Fund]?

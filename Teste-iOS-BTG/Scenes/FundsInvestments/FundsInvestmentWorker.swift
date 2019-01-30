@@ -11,7 +11,7 @@
 //
 
 import Foundation
-import Alamofire
+import Moya
 
 typealias responseHandler = (_ response: FundsInvestments.Funds.Response) -> Void
 
@@ -19,49 +19,20 @@ class FundsInvestmentsWorker {
     
     func fetchFunds(request: FundsInvestments.Funds.Request, completion: @escaping(responseHandler) ) {
         
-        let url = URL(string: Constants.baseUrl + request.pathURL)!
+        let ApiManager = MoyaProvider<FundsServiceAPI>()
         
-        Alamofire.request(url).responseJSON { (response) in
-            let result = response.result
+        ApiManager.request(.fundsList) { (result) in
             switch result {
-            case .success(let json):
-                print(json)
+            case .success(let value):
+                do {
+                    let funds = try value.map([Fund].self)
+                    completion(FundsInvestments.Funds.Response(funds: funds, error: false, message: nil))
+                } catch {
+                    completion(FundsInvestments.Funds.Response(funds: nil, error: true, message: error.localizedDescription))
+                }
             case .failure(let error):
-                print(error)
+                completion(FundsInvestments.Funds.Response(funds: nil, error: true, message: error.localizedDescription))
             }
         }
-//
-//        Alamofire.request(.GET, URLString, parameters: ["foo": "bar"])
-//            .responseJSON { request, response, result in
-//                switch result {
-//                case .Success(let JSON):
-//                    print("Success with JSON: \(JSON)")
-//
-//                case .Failure(let data, let error):
-//                    print("Request failed with error: \(error)")
-//
-//                    if let data = data {
-//                        print("Response data: \(NSString(data: data, encoding: NSUTF8StringEncoding)!)")
-//                    }
-//                }
-        
-        
-//        request(url, method: .get, parameters: nil, encoding: <#T##ParameterEncoding#>, headers: ["Accept": "application/json"])
-//        let ApiManager = MoyaProvider<FundsServiceAPI>(plugins: [NetworkLoggerPlugin(verbose: true)])
-//
-//
-//        ApiManager.request(.fundsList) { (result) in
-//            switch result {
-//            case .success(let value):
-//                do {
-//                    let funds = try value.map([Fund].self)
-//                    completion(FundsInvestments.Funds.Response(funds: funds, error: false, message: nil))
-//                } catch {
-//                    completion(FundsInvestments.Funds.Response(funds: nil, error: true, message: error.localizedDescription))
-//                }
-//            case .failure(let error):
-//                completion(FundsInvestments.Funds.Response(funds: nil, error: true, message: error.localizedDescription))
-//            }
-//        }
     }
 }
