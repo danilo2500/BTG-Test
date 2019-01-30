@@ -1,7 +1,75 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Fundos de Investimentos-->
+        <scene sceneID="Ded-9Z-EEL">
+            <objects>
+                <viewController id="6UZ-1t-2fr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="InF-K0-KFB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kvC-Ie-5fx">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <searchBar key="tableFooterView" contentMode="redraw" searchBarStyle="minimal" placeholder="Pesquisar" id="zCl-kY-97j">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="c3V-ee-8gh" firstAttribute="trailing" secondItem="kvC-Ie-5fx" secondAttribute="trailing" id="EaF-V4-znj"/>
+                            <constraint firstItem="c3V-ee-8gh" firstAttribute="bottom" secondItem="kvC-Ie-5fx" secondAttribute="bottom" id="LVT-kz-Ti7"/>
+                            <constraint firstItem="kvC-Ie-5fx" firstAttribute="top" secondItem="c3V-ee-8gh" secondAttribute="top" id="cfw-1P-gmf"/>
+                            <constraint firstItem="kvC-Ie-5fx" firstAttribute="leading" secondItem="c3V-ee-8gh" secondAttribute="leading" id="mMR-oe-2BT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="c3V-ee-8gh"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Fundos de Investimentos" id="tUg-wA-Wjn"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="viP-20-D3h" id="TsT-fj-2Cz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xRR-Fu-voO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="viP-20-D3h">
+                    <connections>
+                        <outlet property="delegate" destination="6UZ-1t-2fr" id="73D-Gi-CnC"/>
+                        <outlet property="searchContentsController" destination="6UZ-1t-2fr" id="UYp-06-4UQ"/>
+                        <outlet property="searchResultsDataSource" destination="6UZ-1t-2fr" id="bod-YT-bYB"/>
+                        <outlet property="searchResultsDelegate" destination="6UZ-1t-2fr" id="MWq-x1-91j"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1512.8" y="2721.5892053973016"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="i0m-nw-84U">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YQL-4V-Wtp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NLh-dC-UmF">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6UZ-1t-2fr" kind="relationship" relationship="rootViewController" id="rfa-ps-Tf8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ciG-36-lMu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="578" y="2722"/>
+        </scene>
+    </scenes>
 </document>
