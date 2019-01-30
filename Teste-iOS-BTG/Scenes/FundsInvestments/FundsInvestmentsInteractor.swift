@@ -20,7 +20,7 @@ protocol FundsInvestmentsBusinessLogic {
 
 protocol FundsInvestmentsDataStore {
 
-    var funds: [Fund]? { get }
+    var funds: [FundModel]? { get }
 
 }
 
@@ -28,7 +28,7 @@ class FundsInvestmentsInteractor: FundsInvestmentsBusinessLogic, FundsInvestment
     
     var presenter: FundsInvestmentsPresentationLogic?
     var worker: FundsInvestmentsWorker?
-    var funds: [Fund]?
+    var funds: [FundModel]?
     
     // MARK: Fetch Funds
     

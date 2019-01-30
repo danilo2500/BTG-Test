@@ -19,13 +19,27 @@ enum FundsInvestments {
         struct Request {}
         
         struct Response {
-            let funds: [Fund]?
+            let funds: [FundModel]?
             let error: Bool
             let message: String?
         }
         
         struct ViewModel {
             
+            struct DisplayViewModel {
+                let product: String
+                let categoryDescription: String
+                let monthProfitability: String
+                let yearProfitability: String
+                let twelveMonthsProfitability: String
+                let minimumInitialInvestment: String
+                let manager: String
+                let begin: String
+                let netEquity: String
+                let investimentQuota: String
+            }
+            
+            var displayFunds: [DisplayViewModel] = []
         }
     }
 }

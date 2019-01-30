@@ -25,7 +25,7 @@ class FundsInvestmentsWorker {
             switch result {
             case .success(let value):
                 do {
-                    let funds = try value.map([Fund].self)
+                    let funds = try value.map([FundModel].self)
                     completion(FundsInvestments.Funds.Response(funds: funds, error: false, message: nil))
                 } catch {
                     completion(FundsInvestments.Funds.Response(funds: nil, error: true, message: error.localizedDescription))

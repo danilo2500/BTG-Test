@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Fund: Codable {
+struct FundModel: Codable {
     
     let product: String?
     let categoryDescription: String?
