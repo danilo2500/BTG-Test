@@ -27,6 +27,7 @@ class FormatterUtils {
         let formatter = NumberFormatter()
         formatter.locale = Locale(identifier: "pt-BR")
         formatter.numberStyle = .currency
+        formatter.currencySymbol = ""
         return formatter.string(from: NSNumber(value: value))
     }
     

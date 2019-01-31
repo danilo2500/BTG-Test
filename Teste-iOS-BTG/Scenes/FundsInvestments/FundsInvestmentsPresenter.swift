@@ -44,6 +44,7 @@ class FundsInvestmentsPresenter: FundsInvestmentsPresentationLogic
                 begin: FormatterUtils.formatDate(dateString: fund.begin) ?? "-",
                 netEquity: FormatterUtils.formatNumberToReal(value: fund.netEquity) ?? "-",
                 investimentQuota: fund.detail?.investimentQuota ?? "-",
+                riskLevel: RiskModel(rawValue: fund.riskLevel),
                 isShowingDetail: false
             )
             

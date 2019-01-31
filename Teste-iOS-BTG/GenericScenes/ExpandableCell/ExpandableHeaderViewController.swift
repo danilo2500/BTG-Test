@@ -54,6 +54,7 @@ class ExpandableHeaderViewController: UITableViewCell {
         yearProfitabilityLabel.text = viewModel.yearProfitability
         beginLabel.text = viewModel.begin
         netEquityLabel.text = viewModel.netEquity
+        riskView.backgroundColor = viewModel.riskColor ?? UIColor.clear
         
     }
     
@@ -100,6 +101,6 @@ extension ExpandableHeaderViewController {
         let begin: String
         let netEquity: String
         let investimentQuota: String
-        let riskColor: UIColor
+        let riskColor: UIColor?
     }
 }

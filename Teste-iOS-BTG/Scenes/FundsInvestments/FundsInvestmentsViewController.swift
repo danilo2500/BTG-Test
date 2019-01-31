@@ -125,7 +125,7 @@ extension FundsInvestmentsViewController: UITableViewDataSource, UITableViewDele
             begin: displayFund.begin,
             netEquity: displayFund.netEquity,
             investimentQuota: displayFund.investimentQuota,
-            riskColor: UIColor.btg_blue
+            riskColor: displayFund.riskLevel?.representativeColor
         )
         
         return cell

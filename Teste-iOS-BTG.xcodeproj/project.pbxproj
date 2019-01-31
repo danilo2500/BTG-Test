@@ -17,6 +17,7 @@
 		556C30F92201455A00CCCFC5 /* FundsInvestmentsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C30F82201455900CCCFC5 /* FundsInvestmentsPresenter.swift */; };
 		556C30FB2201459C00CCCFC5 /* FundsInvestmentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C30FA2201459C00CCCFC5 /* FundsInvestmentRouter.swift */; };
 		556C30FE2201C8CE00CCCFC5 /* FundModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C30FD2201C8CE00CCCFC5 /* FundModel.swift */; };
+		559CB25F2203817700841C61 /* RiskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559CB25E2203817700841C61 /* RiskModel.swift */; };
 		55F4252422021E96008B3915 /* FundsServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4252322021E96008B3915 /* FundsServiceAPI.swift */; };
 		55F42527220227BA008B3915 /* FormatterUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F42526220227BA008B3915 /* FormatterUtils.swift */; };
 		55F4253422027C5D008B3915 /* RiskHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55F4253322027C5D008B3915 /* RiskHeader.xib */; };
@@ -80,6 +81,7 @@
 		556C30F82201455900CCCFC5 /* FundsInvestmentsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsInvestmentsPresenter.swift; sourceTree = "<group>"; };
 		556C30FA2201459C00CCCFC5 /* FundsInvestmentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsInvestmentRouter.swift; sourceTree = "<group>"; };
 		556C30FD2201C8CE00CCCFC5 /* FundModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundModel.swift; sourceTree = "<group>"; };
+		559CB25E2203817700841C61 /* RiskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskModel.swift; sourceTree = "<group>"; };
 		55F4252322021E96008B3915 /* FundsServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsServiceAPI.swift; sourceTree = "<group>"; };
 		55F42526220227BA008B3915 /* FormatterUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterUtils.swift; sourceTree = "<group>"; };
 		55F4253322027C5D008B3915 /* RiskHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RiskHeader.xib; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				556C30FD2201C8CE00CCCFC5 /* FundModel.swift */,
+				559CB25E2203817700841C61 /* RiskModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				556C30F5220144B200CCCFC5 /* FundsInvestmentWorker.swift in Sources */,
 				556C30F12201432C00CCCFC5 /* FundsInvestmentsViewController.swift in Sources */,
 				55F4252422021E96008B3915 /* FundsServiceAPI.swift in Sources */,
+				559CB25F2203817700841C61 /* RiskModel.swift in Sources */,
 				A279EF9B21B1667600E39E1F /* AppDelegate.swift in Sources */,
 				556C30FB2201459C00CCCFC5 /* FundsInvestmentRouter.swift in Sources */,
 				55F42539220317FE008B3915 /* ExpandableHeaderViewController.swift in Sources */,

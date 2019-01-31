@@ -16,6 +16,7 @@ struct FundModel: Codable {
     let detail: FundDetail?
     let begin: String?
     let netEquity: Double?
+    let riskLevel: Int
     
 }
 

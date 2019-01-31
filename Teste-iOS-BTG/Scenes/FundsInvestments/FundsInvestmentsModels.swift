@@ -11,7 +11,7 @@
 //  see http://clean-swift.com
 //
 
-import UIKit
+import Foundation
 
 enum FundsInvestments {
     
@@ -37,6 +37,7 @@ enum FundsInvestments {
                 let begin: String
                 let netEquity: String
                 let investimentQuota: String
+                let riskLevel: RiskModel?
                 var isShowingDetail: Bool
             }
             
