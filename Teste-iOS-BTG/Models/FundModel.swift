@@ -11,9 +11,8 @@ import Foundation
 struct FundModel: Codable {
     
     let product: String?
-    let categoryDescription: String?
     let profitability: FundProfitability?
-    let minimumInitialInvestment: Float?
+    let minimumInitialInvestment: Double?
     let detail: FundDetail?
     let begin: String?
     let netEquity: Double?
@@ -32,5 +31,5 @@ class FundDetail: Codable {
     
     let manager: String?
     let investimentQuota: String?
-    
+    let categoryDescription: String?
 }

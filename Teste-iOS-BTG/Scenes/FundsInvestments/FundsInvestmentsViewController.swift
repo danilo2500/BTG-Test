@@ -14,6 +14,7 @@ import UIKit
 
 protocol FundsInvestmentsDisplayLogic: class {
     func displayFetchedFunds(viewModel: FundsInvestments.Funds.ViewModel)
+    func errorFetchingFunds(message: String)
 }
 
 class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayLogic {
@@ -75,5 +76,9 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
     
     func displayFetchedFunds(viewModel: FundsInvestments.Funds.ViewModel) {
         //nameTextField.text = viewModel.name
+    }
+    
+    func errorFetchingFunds(message: String) {
+        
     }
 }

@@ -24,9 +24,32 @@ class FundsInvestmentsPresenter: FundsInvestmentsPresentationLogic
     
     // MARK: Do something
     
-    func presentFunds(response: FundsInvestments.Funds.Response)
-    {
-        let viewModel = FundsInvestments.Funds.ViewModel()
+    func presentFunds(response: FundsInvestments.Funds.Response) {
+        
+        guard let responseFunds = response.funds else {
+            viewController?.errorFetchingFunds(message: response.message ?? "-")
+            return
+        }
+        
+        var displayFunds: [FundsInvestments.Funds.ViewModel.DisplayViewModel] = []
+        for fund in responseFunds {
+            let displayFund = FundsInvestments.Funds.ViewModel.DisplayViewModel(
+                product: fund.product ?? "-",
+                categoryDescription: fund.detail?.categoryDescription ?? "-",
+                monthProfitability: FormatterUtils.formatPercentage(value: fund.profitability?.month) ?? "-",
+                yearProfitability: FormatterUtils.formatPercentage(value: fund.profitability?.year) ?? "-",
+                twelveMonthsProfitability:  FormatterUtils.formatPercentage(value: fund.profitability?.twelveMonths) ?? "-",
+                minimumInitialInvestment: FormatterUtils.formatNumberToReal(value: fund.minimumInitialInvestment) ?? "-",
+                manager: fund.detail?.manager ?? "-",
+                begin: FormatterUtils.formatDate(dateString: fund.begin) ?? "-",
+                netEquity: FormatterUtils.formatNumberToReal(value: fund.netEquity) ?? "-",
+                investimentQuota: fund.detail?.investimentQuota ?? "-"
+            )
+            
+            displayFunds.append(displayFund)
+        }
+        
+        let viewModel = FundsInvestments.Funds.ViewModel(displayFunds: displayFunds)
         viewController?.displayFetchedFunds(viewModel: viewModel)
     }
 }
