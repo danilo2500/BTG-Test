@@ -112,6 +112,22 @@ extension FundsInvestmentsViewController: UITableViewDataSource, UITableViewDele
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "expandableHeader", for: indexPath) as! ExpandableHeaderViewController
         cell.delegate = self
+        
+        let displayFund = displayedFunds[indexPath.row]
+        cell.viewModel = ExpandableHeaderViewController.ViewModel(
+            product: displayFund.product,
+            categoryDescription: displayFund.categoryDescription,
+            monthProfitability: displayFund.monthProfitability,
+            yearProfitability: displayFund.yearProfitability,
+            twelveMonthsProfitability: displayFund.twelveMonthsProfitability,
+            minimumInitialInvestment: displayFund.minimumInitialInvestment,
+            manager: displayFund.manager,
+            begin: displayFund.begin,
+            netEquity: displayFund.netEquity,
+            investimentQuota: displayFund.investimentQuota,
+            riskColor: UIColor.btg_blue
+        )
+        
         return cell
     }
 //

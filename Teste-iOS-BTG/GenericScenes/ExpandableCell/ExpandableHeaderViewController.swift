@@ -15,20 +15,61 @@ protocol ExpandableHeaderDelegate: class {
 class ExpandableHeaderViewController: UITableViewCell {
     
     @IBOutlet weak var expandableDetailView: UIView!
+    @IBOutlet weak var expandButton: UIButton!
+    @IBOutlet weak var collapseButton: UIButton!
     
+    @IBOutlet weak var riskView: UIView!
+    @IBOutlet weak var productLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var twelveMonthsLabel: UILabel!
+    @IBOutlet weak var minimumInitialInvestmentLabel: UILabel!
+    @IBOutlet weak var investmentQuotaLabel: UILabel!
+    @IBOutlet weak var monthProfitabilityLabel: UILabel!
+    @IBOutlet weak var yearProfitabilityLabel: UILabel!
+    @IBOutlet weak var beginLabel: UILabel!
+    @IBOutlet weak var netEquityLabel: UILabel!
+
     weak var delegate: ExpandableHeaderDelegate?
     
-    var detailIsHidden = true
+//    private var detailIsHidden = true
     static let openedCellHeight: CGFloat = 349.5
     static let closedCellHeight: CGFloat = 180
     
-    @IBAction func expandButton(_ sender: Any) {
-        if detailIsHidden {
-            showExpandableDetail()
-        } else {
-            hideExpandableDetail()
+    var viewModel: ViewModel? {
+        didSet {
+            didSetViewModel()
         }
+    }
+    
+    func didSetViewModel() {
+        guard let viewModel = viewModel else { return }
+        
+        riskView.backgroundColor = UIColor.btg_blue
+        productLabel.text = viewModel.product
+        categoryLabel.text = viewModel.categoryDescription
+        twelveMonthsLabel.text = viewModel.twelveMonthsProfitability
+        minimumInitialInvestmentLabel.text = viewModel.minimumInitialInvestment
+        investmentQuotaLabel.text = viewModel.investimentQuota
+        monthProfitabilityLabel.text = viewModel.monthProfitability
+        yearProfitabilityLabel.text = viewModel.yearProfitability
+        beginLabel.text = viewModel.begin
+        netEquityLabel.text = viewModel.netEquity
+        
+    }
+    
+    @IBAction func didPressExpandButton(_ sender: Any) {
+        showExpandableDetail()
         setNeedsLayout()
+        expandButton.isHidden = true
+        collapseButton.isHidden = false
+        delegate?.didPressExpandButton(self)
+    }
+    
+    @IBAction func didPressCollapseButton(_ sender: Any) {
+        hideExpandableDetail()
+        setNeedsLayout()
+        collapseButton.isHidden = false
+        expandButton.isHidden = true
         delegate?.didPressExpandButton(self)
     }
     
@@ -38,13 +79,27 @@ class ExpandableHeaderViewController: UITableViewCell {
     }
     
     func hideExpandableDetail() {
-        detailIsHidden = true
         expandableDetailView.isHidden = true
     }
     
     func showExpandableDetail() {
-        detailIsHidden = false
         expandableDetailView.isHidden = false
     }
     
+}
+
+extension ExpandableHeaderViewController {
+    struct ViewModel {
+        let product: String
+        let categoryDescription: String
+        let monthProfitability: String
+        let yearProfitability: String
+        let twelveMonthsProfitability: String
+        let minimumInitialInvestment: String
+        let manager: String
+        let begin: String
+        let netEquity: String
+        let investimentQuota: String
+        let riskColor: UIColor
+    }
 }
