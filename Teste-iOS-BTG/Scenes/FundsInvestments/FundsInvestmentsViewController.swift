@@ -18,6 +18,9 @@ protocol FundsInvestmentsDisplayLogic: class {
 }
 
 class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayLogic {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     var interactor: FundsInvestmentsBusinessLogic?
     var router: (NSObjectProtocol & FundsInvestmentsRoutingLogic & FundsInvestmentsDataPassing)?
     
@@ -66,7 +69,21 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        tableView.estimatedRowHeight = ExpandableHeaderViewController.closedCellHeight
+        tableView.rowHeight = UITableView.automaticDimension
+        
+        configureLayout()
         fetchFunds()
+    }
+    
+    private func configureLayout() {
+        registerNibFiles()
+    }
+    
+    private func registerNibFiles() {
+        let expandableHeader = UINib(nibName: "ExpandableHeader", bundle: nil)
+        tableView.register(expandableHeader, forCellReuseIdentifier: "expandableHeader")
     }
     
     func fetchFunds() {
@@ -80,5 +97,41 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
     
     func errorFetchingFunds(message: String) {
         
+    }
+    
+    var expanded: [Bool] = [false, false, false, false, false]
+}
+
+extension FundsInvestmentsViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "expandableHeader", for: indexPath) as! ExpandableHeaderViewController
+        cell.delegate = self
+        return cell
+    }
+//
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        
+        if expanded[indexPath.row] {
+            return ExpandableHeaderViewController.openedCellHeight
+        } else {
+            return ExpandableHeaderViewController.closedCellHeight
+        }
+        
+
+        return UITableView.automaticDimension
+    }
+}
+
+extension FundsInvestmentsViewController: ExpandableHeaderDelegate {
+    func didPressExpandButton(_ cell: UITableViewCell) {
+        let indexPath = tableView.indexPath(for: cell)
+        expanded[indexPath!.row].toggle()
+        tableView.reloadData()
     }
 }

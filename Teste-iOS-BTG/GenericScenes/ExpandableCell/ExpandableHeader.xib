@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="300" id="0yA-tb-TK5" customClass="ExpandableHeaderViewController" customModule="Teste_iOS_BTG" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0yA-tb-TK5" id="W6J-VI-e9x">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="299.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="o99-aO-deC">
+                        <rect key="frame" x="15" y="15" width="345" height="269.5"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbT-sT-VA1">
+                                <rect key="frame" x="0.0" y="0.0" width="345" height="100"/>
+                                <color key="backgroundColor" name="btg_red"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="uHc-Gf-zw9"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZwY-H5-eTk">
+                                <rect key="frame" x="0.0" y="100" width="345" height="169.5"/>
+                                <color key="backgroundColor" name="btg_green"/>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="lbT-sT-VA1" firstAttribute="top" secondItem="o99-aO-deC" secondAttribute="top" id="LKA-6n-55S"/>
+                        </constraints>
+                    </stackView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xU-k3-l8l">
+                        <rect key="frame" x="323" y="104" width="22" height="22"/>
+                        <connections>
+                            <action selector="expandButton:" destination="0yA-tb-TK5" eventType="touchUpInside" id="JE8-to-ZZZ"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="8xU-k3-l8l" firstAttribute="top" secondItem="lbT-sT-VA1" secondAttribute="bottom" constant="-11" id="GSq-oG-POX"/>
+                    <constraint firstAttribute="bottom" secondItem="o99-aO-deC" secondAttribute="bottom" constant="15" id="OnT-pQ-M3g"/>
+                    <constraint firstItem="8xU-k3-l8l" firstAttribute="trailing" secondItem="lbT-sT-VA1" secondAttribute="trailing" constant="-15" id="SNl-rW-IJo"/>
+                    <constraint firstItem="o99-aO-deC" firstAttribute="leading" secondItem="W6J-VI-e9x" secondAttribute="leading" constant="15" id="UFk-lu-dAn"/>
+                    <constraint firstAttribute="trailing" secondItem="o99-aO-deC" secondAttribute="trailing" constant="15" id="j5H-Fq-f2B"/>
+                    <constraint firstItem="o99-aO-deC" firstAttribute="top" secondItem="W6J-VI-e9x" secondAttribute="top" constant="15" id="lEX-oE-Wb9"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="expandableDetailView" destination="ZwY-H5-eTk" id="TgN-cV-aos"/>
+            </connections>
+            <point key="canvasLocation" x="229" y="-34"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="btg_green">
+            <color red="0.65098039215686276" green="0.80784313725490198" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="btg_red">
+            <color red="0.72549019607843135" green="0.28235294117647058" blue="0.29019607843137257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

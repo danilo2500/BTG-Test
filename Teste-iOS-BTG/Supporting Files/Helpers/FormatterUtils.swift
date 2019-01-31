@@ -22,7 +22,7 @@ class FormatterUtils {
     }
     
     static func formatNumberToReal(value: Double?) -> String? {
-        guard let value = value else { return nil}
+        guard let value = value else { return nil }
         
         let formatter = NumberFormatter()
         formatter.locale = Locale(identifier: "pt-BR")
