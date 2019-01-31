@@ -23,7 +23,7 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
     
     var interactor: FundsInvestmentsBusinessLogic?
     var router: (NSObjectProtocol & FundsInvestmentsRoutingLogic & FundsInvestmentsDataPassing)?
-    
+    var displayedFunds: [FundsInvestments.Funds.ViewModel.DisplayViewModel] = []
     // MARK: Object lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -69,21 +69,23 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tableView.estimatedRowHeight = ExpandableHeaderViewController.closedCellHeight
-        tableView.rowHeight = UITableView.automaticDimension
-        
         configureLayout()
         fetchFunds()
     }
     
     private func configureLayout() {
         registerNibFiles()
+        configureTableView()
     }
     
     private func registerNibFiles() {
         let expandableHeader = UINib(nibName: "ExpandableHeader", bundle: nil)
         tableView.register(expandableHeader, forCellReuseIdentifier: "expandableHeader")
+    }
+    
+    private func configureTableView() {
+        tableView.estimatedRowHeight = ExpandableHeaderViewController.closedCellHeight
+        tableView.rowHeight = UITableView.automaticDimension
     }
     
     func fetchFunds() {
@@ -92,20 +94,19 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
     }
     
     func displayFetchedFunds(viewModel: FundsInvestments.Funds.ViewModel) {
-        //nameTextField.text = viewModel.name
+        displayedFunds = viewModel.displayFunds
+        tableView.reloadData()
     }
     
     func errorFetchingFunds(message: String) {
         
     }
-    
-    var expanded: [Bool] = [false, false, false, false, false]
 }
 
 extension FundsInvestmentsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return displayedFunds.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -115,23 +116,19 @@ extension FundsInvestmentsViewController: UITableViewDataSource, UITableViewDele
     }
 //
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        
-        if expanded[indexPath.row] {
+        if displayedFunds[indexPath.row].isShowingDetail {
             return ExpandableHeaderViewController.openedCellHeight
         } else {
             return ExpandableHeaderViewController.closedCellHeight
         }
         
-
-        return UITableView.automaticDimension
     }
 }
 
 extension FundsInvestmentsViewController: ExpandableHeaderDelegate {
     func didPressExpandButton(_ cell: UITableViewCell) {
-        let indexPath = tableView.indexPath(for: cell)
-        expanded[indexPath!.row].toggle()
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        displayedFunds[indexPath.row].isShowingDetail.toggle()
         tableView.reloadData()
     }
 }

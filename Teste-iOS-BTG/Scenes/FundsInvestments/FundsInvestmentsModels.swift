@@ -37,6 +37,7 @@ enum FundsInvestments {
                 let begin: String
                 let netEquity: String
                 let investimentQuota: String
+                var isShowingDetail: Bool
             }
             
             var displayFunds: [DisplayViewModel] = []

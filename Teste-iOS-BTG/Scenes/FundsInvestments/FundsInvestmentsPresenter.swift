@@ -43,7 +43,8 @@ class FundsInvestmentsPresenter: FundsInvestmentsPresentationLogic
                 manager: fund.detail?.manager ?? "-",
                 begin: FormatterUtils.formatDate(dateString: fund.begin) ?? "-",
                 netEquity: FormatterUtils.formatNumberToReal(value: fund.netEquity) ?? "-",
-                investimentQuota: fund.detail?.investimentQuota ?? "-"
+                investimentQuota: fund.detail?.investimentQuota ?? "-",
+                isShowingDetail: false
             )
             
             displayFunds.append(displayFund)

@@ -19,11 +19,10 @@ class ExpandableHeaderViewController: UITableViewCell {
     weak var delegate: ExpandableHeaderDelegate?
     
     var detailIsHidden = true
-    static let openedCellHeight: CGFloat = 299.5
-    static let closedCellHeight: CGFloat = 130
+    static let openedCellHeight: CGFloat = 349.5
+    static let closedCellHeight: CGFloat = 180
     
     @IBAction func expandButton(_ sender: Any) {
-        
         if detailIsHidden {
             showExpandableDetail()
         } else {
