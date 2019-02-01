@@ -15,7 +15,7 @@ import UIKit
 protocol FundsInvestmentsBusinessLogic {
     
     func fetchFunds(request: FundsInvestments.Funds.Request)
-    
+    func filterFunds(request: FundsInvestments.Funds.Request)
 }
 
 protocol FundsInvestmentsDataStore {
@@ -24,7 +24,7 @@ protocol FundsInvestmentsDataStore {
 
 }
 
-class FundsInvestmentsInteractor: FundsInvestmentsBusinessLogic, FundsInvestmentsDataStore {
+class FundsInvestmentsInteractor: FundsInvestmentsBusinessLogic, FundsInvestmentsDataStore
     
     var presenter: FundsInvestmentsPresentationLogic?
     var worker: FundsInvestmentsWorker?
@@ -37,6 +37,11 @@ class FundsInvestmentsInteractor: FundsInvestmentsBusinessLogic, FundsInvestment
         worker?.fetchFunds(request: request, completion: { [weak self] (response) in
             self?.presenter?.presentFunds(response: response)
         })
+    }
+
+    func filterFunds(request: FundsInvestments.Funds.Request) {
+        worker = FundsInvestmentsWorker()
+        worker.filter
     }
     
 }

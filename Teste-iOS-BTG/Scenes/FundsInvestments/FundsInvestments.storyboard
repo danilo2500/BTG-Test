@@ -38,19 +38,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Fundos de Investimentos" id="tUg-wA-Wjn"/>
                     <connections>
-                        <outlet property="searchDisplayController" destination="viP-20-D3h" id="TsT-fj-2Cz"/>
                         <outlet property="tableView" destination="kvC-Ie-5fx" id="fql-iT-bfQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xRR-Fu-voO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="viP-20-D3h">
-                    <connections>
-                        <outlet property="delegate" destination="6UZ-1t-2fr" id="73D-Gi-CnC"/>
-                        <outlet property="searchContentsController" destination="6UZ-1t-2fr" id="UYp-06-4UQ"/>
-                        <outlet property="searchResultsDataSource" destination="6UZ-1t-2fr" id="bod-YT-bYB"/>
-                        <outlet property="searchResultsDelegate" destination="6UZ-1t-2fr" id="MWq-x1-91j"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1512.8" y="2721.5892053973016"/>
         </scene>

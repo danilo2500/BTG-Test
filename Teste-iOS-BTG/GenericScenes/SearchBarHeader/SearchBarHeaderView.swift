@@ -9,7 +9,18 @@
 import UIKit
 
 class SearchBarHeaderView: UITableViewHeaderFooterView {
+ 
     @IBOutlet weak var searchBar: UISearchBar!
     
+    weak var delegate: UISearchBarDelegate? {
+        didSet{
+            didSetDelegate()
+        }
+    }
+    
+    private func didSetDelegate() {
+        searchBar.delegate = delegate
+    }
     
 }
+

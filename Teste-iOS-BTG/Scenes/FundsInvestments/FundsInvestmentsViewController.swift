@@ -183,7 +183,9 @@ extension FundsInvestmentsViewController: UITableViewDataSource, UITableViewDele
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         switch section {
         case 0:
-            return tableView.dequeueReusableHeaderFooterView(withIdentifier: SearchBarHeaderModels.SearchBarHeader.ViewModel.reuseIdentifier)!
+            let cell = tableView.dequeueReusableHeaderFooterView(withIdentifier: SearchBarHeaderModels.SearchBarHeader.ViewModel.reuseIdentifier) as! SearchBarHeaderView
+            cell.delegate = self
+            return cell
         case 1:
             return tableView.dequeueReusableCell(withIdentifier: RiskHeaderModels.RiskHeader.ViewModel.reuseIdentifier)!
         default:
@@ -209,5 +211,12 @@ extension FundsInvestmentsViewController: ExpandableHeaderDelegate {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         displayedFunds[indexPath.row].isShowingDetail.toggle()
         tableView.reloadData()
+    }
+}
+
+extension FundsInvestmentsViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        let request = FundsInvestments.Funds.Request()
+        interactor?.filterFunds(request: request)
     }
 }
