@@ -15,8 +15,10 @@ import Foundation
 
 enum FundsInvestments {
     
-    enum Funds {
-        struct Request {}
+    enum FetchFunds {
+        struct Request {
+            let product: String?
+        }
         
         struct Response {
             let funds: [FundModel]?

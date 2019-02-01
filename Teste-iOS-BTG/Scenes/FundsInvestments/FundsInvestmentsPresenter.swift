@@ -15,7 +15,7 @@ import UIKit
 
 protocol FundsInvestmentsPresentationLogic
 {
-    func presentFunds(response: FundsInvestments.Funds.Response)
+    func presentFunds(response: FundsInvestments.FetchFunds.Response)
 }
 
 class FundsInvestmentsPresenter: FundsInvestmentsPresentationLogic
@@ -24,16 +24,16 @@ class FundsInvestmentsPresenter: FundsInvestmentsPresentationLogic
     
     // MARK: Do something
     
-    func presentFunds(response: FundsInvestments.Funds.Response) {
+    func presentFunds(response: FundsInvestments.FetchFunds.Response) {
         
         guard let responseFunds = response.funds else {
             viewController?.errorFetchingFunds(message: response.message ?? "-")
             return
         }
         
-        var displayFunds: [FundsInvestments.Funds.ViewModel.DisplayViewModel] = []
+        var displayFunds: [FundsInvestments.FetchFunds.ViewModel.DisplayViewModel] = []
         for fund in responseFunds {
-            let displayFund = FundsInvestments.Funds.ViewModel.DisplayViewModel(
+            let displayFund = FundsInvestments.FetchFunds.ViewModel.DisplayViewModel(
                 product: fund.product ?? "-",
                 categoryDescription: fund.detail?.categoryDescription ?? "-",
                 monthProfitability: FormatterUtils.formatPercentage(value: fund.profitability?.month) ?? "-",
@@ -51,7 +51,7 @@ class FundsInvestmentsPresenter: FundsInvestmentsPresentationLogic
             displayFunds.append(displayFund)
         }
         
-        let viewModel = FundsInvestments.Funds.ViewModel(displayFunds: displayFunds)
+        let viewModel = FundsInvestments.FetchFunds.ViewModel(displayFunds: displayFunds)
         viewController?.displayFetchedFunds(viewModel: viewModel)
     }
 }

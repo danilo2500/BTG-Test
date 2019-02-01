@@ -13,11 +13,11 @@
 import Foundation
 import Moya
 
-typealias responseHandler = (_ response: FundsInvestments.Funds.Response) -> Void
+typealias responseHandler = (_ response: FundsInvestments.FetchFunds.Response) -> Void
 
 class FundsInvestmentsWorker {
     
-    func fetchFunds(request: FundsInvestments.Funds.Request, completion: @escaping(responseHandler) ) {
+    func fetchFunds(request: FundsInvestments.FetchFunds.Request, completion: @escaping(responseHandler)) {
         
         let ApiManager = MoyaProvider<FundsServiceAPI>()
         
@@ -26,13 +26,21 @@ class FundsInvestmentsWorker {
             case .success(let value):
                 do {
                     let funds = try value.map([FundModel].self)
-                    completion(FundsInvestments.Funds.Response(funds: funds, error: false, message: nil))
+                    completion(FundsInvestments.FetchFunds.Response(funds: funds, error: false, message: nil))
                 } catch {
-                    completion(FundsInvestments.Funds.Response(funds: nil, error: true, message: error.localizedDescription))
+                    completion(FundsInvestments.FetchFunds.Response(funds: nil, error: true, message: error.localizedDescription))
                 }
             case .failure(let error):
-                completion(FundsInvestments.Funds.Response(funds: nil, error: true, message: error.localizedDescription))
+                completion(FundsInvestments.FetchFunds.Response(funds: nil, error: true, message: error.localizedDescription))
             }
         }
     }
+    
+    func filterFunds(request: FundsInvestments.FetchFunds.Request, funds: [FundModel]) -> FundsInvestments.FetchFunds.Response {
+        let filtered = funds.filter({ (fund) -> Bool in
+            return fund.product?.localizedCaseInsensitiveContains(request.product ?? "") ?? false
+        })
+        return FundsInvestments.FetchFunds.Response(funds: filtered, error: false, message: nil)
+    }
+    
 }

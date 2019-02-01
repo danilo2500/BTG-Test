@@ -13,7 +13,7 @@
 import UIKit
 
 protocol FundsInvestmentsDisplayLogic: class {
-    func displayFetchedFunds(viewModel: FundsInvestments.Funds.ViewModel)
+    func displayFetchedFunds(viewModel: FundsInvestments.FetchFunds.ViewModel)
     func errorFetchingFunds(message: String)
 }
 
@@ -23,7 +23,11 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
     
     var interactor: FundsInvestmentsBusinessLogic?
     var router: (NSObjectProtocol & FundsInvestmentsRoutingLogic & FundsInvestmentsDataPassing)?
-    var displayedFunds: [FundsInvestments.Funds.ViewModel.DisplayViewModel] = []
+    var displayedFunds: [FundsInvestments.FetchFunds.ViewModel.DisplayViewModel] = [] {
+        didSet{
+            
+        }
+    }
     // MARK: Object lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -104,11 +108,11 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
     }
     
     func fetchFunds() {
-        let request = FundsInvestments.Funds.Request()
+        let request = FundsInvestments.FetchFunds.Request(product: nil)
         interactor?.fetchFunds(request: request)
     }
     
-    func displayFetchedFunds(viewModel: FundsInvestments.Funds.ViewModel) {
+    func displayFetchedFunds(viewModel: FundsInvestments.FetchFunds.ViewModel) {
         displayedFunds = viewModel.displayFunds
         tableView.reloadData()
     }
@@ -216,7 +220,8 @@ extension FundsInvestmentsViewController: ExpandableHeaderDelegate {
 
 extension FundsInvestmentsViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        let request = FundsInvestments.Funds.Request()
+        let request = FundsInvestments.FetchFunds.Request(product: searchText)
+        print(#function)
         interactor?.filterFunds(request: request)
     }
 }
