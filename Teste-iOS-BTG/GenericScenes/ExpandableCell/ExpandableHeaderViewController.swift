@@ -31,11 +31,10 @@ class ExpandableHeaderViewController: UITableViewCell {
 
     weak var delegate: ExpandableHeaderDelegate?
     
-//    private var detailIsHidden = true
     static let openedCellHeight: CGFloat = 349.5
     static let closedCellHeight: CGFloat = 180
     
-    var viewModel: ViewModel? {
+    var viewModel: ExpandableHeaderViewModels.Fund.ViewModel? {
         didSet {
             didSetViewModel()
         }
@@ -44,7 +43,6 @@ class ExpandableHeaderViewController: UITableViewCell {
     func didSetViewModel() {
         guard let viewModel = viewModel else { return }
         
-        riskView.backgroundColor = UIColor.btg_blue
         productLabel.text = viewModel.product
         categoryLabel.text = viewModel.categoryDescription
         twelveMonthsLabel.text = viewModel.twelveMonthsProfitability
@@ -87,20 +85,4 @@ class ExpandableHeaderViewController: UITableViewCell {
         expandableDetailView.isHidden = false
     }
     
-}
-
-extension ExpandableHeaderViewController {
-    struct ViewModel {
-        let product: String
-        let categoryDescription: String
-        let monthProfitability: String
-        let yearProfitability: String
-        let twelveMonthsProfitability: String
-        let minimumInitialInvestment: String
-        let manager: String
-        let begin: String
-        let netEquity: String
-        let investimentQuota: String
-        let riskColor: UIColor?
-    }
 }

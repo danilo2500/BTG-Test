@@ -114,7 +114,7 @@ extension FundsInvestmentsViewController: UITableViewDataSource, UITableViewDele
         cell.delegate = self
         
         let displayFund = displayedFunds[indexPath.row]
-        cell.viewModel = ExpandableHeaderViewController.ViewModel(
+        cell.viewModel = ExpandableHeaderViewModels.Fund.ViewModel(
             product: displayFund.product,
             categoryDescription: displayFund.categoryDescription,
             monthProfitability: displayFund.monthProfitability,
