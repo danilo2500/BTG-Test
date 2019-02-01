@@ -79,6 +79,12 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
     }
     
     private func registerNibFiles() {
+        let searchBar = UINib(nibName: "SearchBarHeader", bundle: nil)
+        tableView.register(
+            searchBar,
+            forHeaderFooterViewReuseIdentifier: SearchBarHeaderModels.SearchBarHeader.ViewModel.reuseIdentifier
+        )
+        
         let expandableHeader = UINib(nibName: "ExpandableHeader", bundle: nil)
         tableView.register(
             expandableHeader,
@@ -177,7 +183,7 @@ extension FundsInvestmentsViewController: UITableViewDataSource, UITableViewDele
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         switch section {
         case 0:
-             return tableView.dequeueReusableCell(withIdentifier: "SearchCell")!
+            return tableView.dequeueReusableHeaderFooterView(withIdentifier: SearchBarHeaderModels.SearchBarHeader.ViewModel.reuseIdentifier)!
         case 1:
             return tableView.dequeueReusableCell(withIdentifier: RiskHeaderModels.RiskHeader.ViewModel.reuseIdentifier)!
         default:

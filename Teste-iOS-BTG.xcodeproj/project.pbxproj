@@ -21,6 +21,9 @@
 		559CB2662203CB3700841C61 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559CB2652203CB3600841C61 /* Extension+UIView.swift */; };
 		559CB26C2203D5F100841C61 /* ExpandableHeaderViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559CB26B2203D5F100841C61 /* ExpandableHeaderViewModels.swift */; };
 		55DE56E422046A0300076941 /* RiskHeaderModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DE56E322046A0300076941 /* RiskHeaderModels.swift */; };
+		55DE56E922049AB300076941 /* SearchBarHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55DE56E822049AB300076941 /* SearchBarHeader.xib */; };
+		55DE56EB22049AE100076941 /* SearchBarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DE56EA22049AE100076941 /* SearchBarHeaderView.swift */; };
+		55DE56ED22049BE300076941 /* SearchBarHeaderModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DE56EC22049BE300076941 /* SearchBarHeaderModels.swift */; };
 		55F4252422021E96008B3915 /* FundsServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4252322021E96008B3915 /* FundsServiceAPI.swift */; };
 		55F42527220227BA008B3915 /* FormatterUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F42526220227BA008B3915 /* FormatterUtils.swift */; };
 		55F4253422027C5D008B3915 /* RiskHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55F4253322027C5D008B3915 /* RiskHeader.xib */; };
@@ -88,6 +91,9 @@
 		559CB2652203CB3600841C61 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		559CB26B2203D5F100841C61 /* ExpandableHeaderViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableHeaderViewModels.swift; sourceTree = "<group>"; };
 		55DE56E322046A0300076941 /* RiskHeaderModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskHeaderModels.swift; sourceTree = "<group>"; };
+		55DE56E822049AB300076941 /* SearchBarHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchBarHeader.xib; sourceTree = "<group>"; };
+		55DE56EA22049AE100076941 /* SearchBarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarHeaderView.swift; sourceTree = "<group>"; };
+		55DE56EC22049BE300076941 /* SearchBarHeaderModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarHeaderModels.swift; sourceTree = "<group>"; };
 		55F4252322021E96008B3915 /* FundsServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsServiceAPI.swift; sourceTree = "<group>"; };
 		55F42526220227BA008B3915 /* FormatterUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterUtils.swift; sourceTree = "<group>"; };
 		55F4253322027C5D008B3915 /* RiskHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RiskHeader.xib; sourceTree = "<group>"; };
@@ -211,6 +217,16 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		55DE56E722049A9C00076941 /* SearchBarHeader */ = {
+			isa = PBXGroup;
+			children = (
+				55DE56E822049AB300076941 /* SearchBarHeader.xib */,
+				55DE56EA22049AE100076941 /* SearchBarHeaderView.swift */,
+				55DE56EC22049BE300076941 /* SearchBarHeaderModels.swift */,
+			);
+			path = SearchBarHeader;
+			sourceTree = "<group>";
+		};
 		55F4252522022797008B3915 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +238,7 @@
 		55F4253122027BD7008B3915 /* GenericScenes */ = {
 			isa = PBXGroup;
 			children = (
+				55DE56E722049A9C00076941 /* SearchBarHeader */,
 				55F4253522030985008B3915 /* ExpandableCell */,
 				55F4253222027BEA008B3915 /* RiskHeader */,
 			);
@@ -473,6 +490,7 @@
 				55F4253422027C5D008B3915 /* RiskHeader.xib in Resources */,
 				55F4253722031046008B3915 /* ExpandableHeader.xib in Resources */,
 				A279EFE021B1672300E39E1F /* SourceSansPro-ExtraLight.otf in Resources */,
+				55DE56E922049AB300076941 /* SearchBarHeader.xib in Resources */,
 				A279EFA021B1667600E39E1F /* Main.storyboard in Resources */,
 				A279EFDD21B1672300E39E1F /* SourceSansPro-BlackIt.otf in Resources */,
 				A279EFE221B1672300E39E1F /* SourceSansPro-Black.otf in Resources */,
@@ -605,6 +623,7 @@
 				556C30FE2201C8CE00CCCFC5 /* FundModel.swift in Sources */,
 				556C30F5220144B200CCCFC5 /* FundsInvestmentWorker.swift in Sources */,
 				556C30F12201432C00CCCFC5 /* FundsInvestmentsViewController.swift in Sources */,
+				55DE56EB22049AE100076941 /* SearchBarHeaderView.swift in Sources */,
 				55F4252422021E96008B3915 /* FundsServiceAPI.swift in Sources */,
 				559CB25F2203817700841C61 /* RiskModel.swift in Sources */,
 				A279EF9B21B1667600E39E1F /* AppDelegate.swift in Sources */,
@@ -612,6 +631,7 @@
 				55F42539220317FE008B3915 /* ExpandableHeaderViewController.swift in Sources */,
 				559CB26C2203D5F100841C61 /* ExpandableHeaderViewModels.swift in Sources */,
 				556C30F72201452600CCCFC5 /* FundsInvestmentsModels.swift in Sources */,
+				55DE56ED22049BE300076941 /* SearchBarHeaderModels.swift in Sources */,
 				555EDB902201F52900977D96 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
