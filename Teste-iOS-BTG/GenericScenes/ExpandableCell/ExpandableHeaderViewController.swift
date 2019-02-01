@@ -61,16 +61,12 @@ class ExpandableHeaderViewController: UITableViewCell {
     @IBAction func didPressExpandButton(_ sender: Any) {
         showExpandableDetail()
         setNeedsLayout()
-        expandButton.isHidden = true
-        collapseButton.isHidden = false
         delegate?.didPressExpandButton(self)
     }
     
     @IBAction func didPressCollapseButton(_ sender: Any) {
         hideExpandableDetail()
         setNeedsLayout()
-        collapseButton.isHidden = false
-        expandButton.isHidden = true
         delegate?.didPressExpandButton(self)
     }
     
@@ -80,10 +76,14 @@ class ExpandableHeaderViewController: UITableViewCell {
     }
     
     func hideExpandableDetail() {
+        expandButton.isHidden = false
+        collapseButton.isHidden = true
         expandableDetailView.isHidden = true
     }
     
     func showExpandableDetail() {
+        expandButton.isHidden = true
+        collapseButton.isHidden = false
         expandableDetailView.isHidden = false
     }
     
