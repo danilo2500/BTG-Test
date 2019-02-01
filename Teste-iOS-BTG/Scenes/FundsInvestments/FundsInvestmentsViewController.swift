@@ -108,7 +108,7 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
     }
     
     func fetchFunds() {
-        let request = FundsInvestments.FetchFunds.Request(product: nil)
+        let request = FundsInvestments.FetchFunds.Request()
         interactor?.fetchFunds(request: request)
     }
     
@@ -220,8 +220,8 @@ extension FundsInvestmentsViewController: ExpandableHeaderDelegate {
 
 extension FundsInvestmentsViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        let request = FundsInvestments.FetchFunds.Request(product: searchText)
-        print(#function)
+        var request = FundsInvestments.FetchFunds.Request()
+        request.product = searchText
         interactor?.filterFunds(request: request)
     }
 }

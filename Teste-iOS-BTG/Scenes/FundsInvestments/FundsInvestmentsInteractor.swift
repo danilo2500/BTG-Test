@@ -40,7 +40,7 @@ class FundsInvestmentsInteractor: FundsInvestmentsBusinessLogic, FundsInvestment
         })
     }
     
-    func filterFunds(request: FundsInvestments.FetchFunds.Request) {
+    func searchFunds(request: FundsInvestments.FetchFunds.Request) {
         if request.product?.isEmpty ?? true {
             if let fundsResponse = fundsResponse {
                 self.presenter?.presentFunds(response: fundsResponse)
@@ -48,8 +48,17 @@ class FundsInvestmentsInteractor: FundsInvestmentsBusinessLogic, FundsInvestment
         } else {
             guard let funds = fundsResponse?.funds else { return }
             worker = FundsInvestmentsWorker()
-            let filtered = worker!.filterFunds(request: request, funds: funds)
+            let filtered = worker!.searchFunds(request: request, funds: funds)
             presenter?.presentFunds(response: filtered )
         }
+    }
+    
+    func filterFunds(request: FundsInvestments.FetchFunds.Request) {
+ 
+        guard let funds = fundsResponse?.funds else { return }
+        worker = FundsInvestmentsWorker()
+        let filtered = worker!.filterFunds(request: request, funds: funds)
+        presenter?.presentFunds(response: filtered )
+        
     }
 }
