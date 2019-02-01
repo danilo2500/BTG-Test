@@ -46,8 +46,7 @@ extension FundsServiceAPI: TargetType {
     var headers: [String : String]? {
         switch self {
         case .fundsList:
-            return ["content-type": "application/json",
-                    "accept": "application/json"]
+            return ["content-type": "application/json"]
         }
     }
     
