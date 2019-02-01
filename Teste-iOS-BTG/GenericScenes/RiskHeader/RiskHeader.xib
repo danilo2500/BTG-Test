@@ -26,13 +26,14 @@
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="XlI-um-QUI">
                         <rect key="frame" x="31" y="16.5" width="313" height="11"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="rtL-EX-770">
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="rtL-EX-770">
                                 <rect key="frame" x="0.0" y="0.0" width="80.5" height="11"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EtO-Mz-Cqe">
                                         <rect key="frame" x="0.0" y="0.0" width="6" height="11"/>
                                         <color key="backgroundColor" name="btg_blue"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="11" id="Esd-G2-EK6"/>
                                             <constraint firstAttribute="width" constant="6" id="TAg-2V-jTX"/>
                                         </constraints>
                                     </view>
@@ -44,13 +45,14 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="m2G-ZI-pJq">
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="m2G-ZI-pJq">
                                 <rect key="frame" x="128" y="0.0" width="64.5" height="11"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UYu-WH-KSA">
                                         <rect key="frame" x="0.0" y="0.0" width="6" height="11"/>
                                         <color key="backgroundColor" name="btg_orange"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="11" id="DTZ-JH-B0T"/>
                                             <constraint firstAttribute="width" constant="6" id="rLB-EZ-PK8"/>
                                         </constraints>
                                     </view>
@@ -62,7 +64,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="DIn-jV-qMy">
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="DIn-jV-qMy">
                                 <rect key="frame" x="239.5" y="0.0" width="73.5" height="11"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VAx-DL-Gfs">
@@ -70,6 +72,7 @@
                                         <color key="backgroundColor" name="btg_brown"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="7" id="7fS-39-tmx"/>
+                                            <constraint firstAttribute="height" constant="11" id="co2-eg-RNO"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOFISTICADO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgi-Rh-Zc8">
@@ -81,17 +84,18 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="11" id="p9f-sZ-v1K"/>
-                        </constraints>
                     </stackView>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="XlI-um-QUI" secondAttribute="trailing" constant="15" id="GbQ-FV-2aC"/>
-                    <constraint firstItem="XlI-um-QUI" firstAttribute="centerY" secondItem="yDA-NL-s05" secondAttribute="centerY" id="iCa-Gs-b1b"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="XlI-um-QUI" secondAttribute="bottom" constant="5.5" id="vy2-dA-QHf"/>
+                    <constraint firstItem="XlI-um-QUI" firstAttribute="top" secondItem="yDA-NL-s05" secondAttribute="topMargin" constant="5.5" id="w3T-kN-ONc"/>
                     <constraint firstItem="XlI-um-QUI" firstAttribute="leading" secondItem="yDA-NL-s05" secondAttribute="leadingMargin" constant="15" id="y4Z-eS-Zyi"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <point key="canvasLocation" x="148" y="48.575712143928037"/>
         </tableViewCell>
     </objects>
     <resources>
