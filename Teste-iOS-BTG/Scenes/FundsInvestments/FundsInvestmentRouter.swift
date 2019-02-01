@@ -15,7 +15,7 @@ import UIKit
 
 @objc protocol FundsInvestmentsRoutingLogic
 {
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routeToFilterInvestments()
 }
 
 protocol FundsInvestmentsDataPassing
@@ -23,34 +23,24 @@ protocol FundsInvestmentsDataPassing
     var dataStore: FundsInvestmentsDataStore? { get }
 }
 
-class FundsInvestmentsRouter: NSObject, FundsInvestmentsRoutingLogic, FundsInvestmentsDataPassing
-{
+class FundsInvestmentsRouter: NSObject, FundsInvestmentsRoutingLogic {
     weak var viewController: FundsInvestmentsViewController?
     var dataStore: FundsInvestmentsDataStore?
     
     // MARK: Routing
     
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
-    //{
-    //  if let segue = segue {
-    //    let destinationVC = segue.destination as! SomewhereViewController
-    //    var destinationDS = destinationVC.router!.dataStore!
-    //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-    //  } else {
-    //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-    //    var destinationDS = destinationVC.router!.dataStore!
-    //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-    //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-    //  }
-    //}
+    func routeToFilterInvestments() {
+        let storyboard = UIStoryboard(name: "FilterInvestments", bundle: nil)
+        let destinationVC = storyboard.instantiateInitialViewController() as! FilterInvestmentsViewController
+        navigateToFilterInvestments(source: viewController!, destination: destinationVC)
+    }
     
     // MARK: Navigation
     
-    //func navigateToSomewhere(source: FundsInvestmentViewController, destination: SomewhereViewController)
-    //{
-    //  source.show(destination, sender: nil)
-    //}
+    func navigateToFilterInvestments(source: FundsInvestmentsViewController, destination: FilterInvestmentsViewController) {
+        source.present(destination, animated: true, completion: nil)
+      
+    }
     
     // MARK: Passing data
     

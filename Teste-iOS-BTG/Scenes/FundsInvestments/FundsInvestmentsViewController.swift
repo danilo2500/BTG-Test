@@ -22,7 +22,7 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
     @IBOutlet weak var tableView: UITableView!
     
     var interactor: FundsInvestmentsBusinessLogic?
-    var router: (NSObjectProtocol & FundsInvestmentsRoutingLogic & FundsInvestmentsDataPassing)?
+    var router: (NSObjectProtocol & FundsInvestmentsRoutingLogic )?
     var displayedFunds: [FundsInvestments.FetchFunds.ViewModel.DisplayViewModel] = [] {
         didSet{
             
@@ -59,15 +59,15 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
     
     // MARK: Routing
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-//    {
-//        if let scene = segue.identifier {
-//            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-//            if let router = router, router.responds(to: selector) {
-//                router.perform(selector, with: segue)
-//            }
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
     
     // MARK: View lifecycle
     
@@ -120,6 +120,11 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
     func errorFetchingFunds(message: String) {
         
     }
+    
+    @IBAction func didPressFilterButton(_ sender: Any) {
+        router?.routeToFilterInvestments()
+    }
+    
 }
 
 extension FundsInvestmentsViewController: UITableViewDataSource, UITableViewDelegate {

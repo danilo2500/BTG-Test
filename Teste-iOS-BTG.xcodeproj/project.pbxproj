@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		432182114F250AAF20481BCA /* Pods_Teste_iOS_BTG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0635458FEA71395B02501A08 /* Pods_Teste_iOS_BTG.framework */; };
+		55442C452204CD4A000A9ED9 /* FilterInvestments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55442C442204CD4A000A9ED9 /* FilterInvestments.storyboard */; };
+		55442C472204D0AD000A9ED9 /* FilterInvestmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55442C462204D0AD000A9ED9 /* FilterInvestmentsViewController.swift */; };
 		555EDB902201F52900977D96 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555EDB8F2201F52900977D96 /* Constants.swift */; };
 		556C30EF220142DF00CCCFC5 /* FundsInvestments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556C30EE220142DF00CCCFC5 /* FundsInvestments.storyboard */; };
 		556C30F12201432C00CCCFC5 /* FundsInvestmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C30F02201432C00CCCFC5 /* FundsInvestmentsViewController.swift */; };
@@ -78,6 +80,8 @@
 		15CD51F95B012BDE2D1E53CF /* Pods_Teste_iOS_BTGTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Teste_iOS_BTGTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21045B7C696277A76C5F05C2 /* Pods-Teste-iOS-BTGTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teste-iOS-BTGTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Teste-iOS-BTGTests/Pods-Teste-iOS-BTGTests.debug.xcconfig"; sourceTree = "<group>"; };
 		28573924DC0E8160189E3162 /* Pods-Teste-iOS-BTGUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teste-iOS-BTGUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Teste-iOS-BTGUITests/Pods-Teste-iOS-BTGUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		55442C442204CD4A000A9ED9 /* FilterInvestments.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FilterInvestments.storyboard; sourceTree = "<group>"; };
+		55442C462204D0AD000A9ED9 /* FilterInvestmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterInvestmentsViewController.swift; sourceTree = "<group>"; };
 		555EDB8F2201F52900977D96 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		556C30EE220142DF00CCCFC5 /* FundsInvestments.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FundsInvestments.storyboard; sourceTree = "<group>"; };
 		556C30F02201432C00CCCFC5 /* FundsInvestmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsInvestmentsViewController.swift; sourceTree = "<group>"; };
@@ -159,9 +163,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55442C412204CCE1000A9ED9 /* FilterInvestments */ = {
+			isa = PBXGroup;
+			children = (
+				55442C442204CD4A000A9ED9 /* FilterInvestments.storyboard */,
+				55442C462204D0AD000A9ED9 /* FilterInvestmentsViewController.swift */,
+			);
+			path = FilterInvestments;
+			sourceTree = "<group>";
+		};
 		556C30E82201332900CCCFC5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				55442C412204CCE1000A9ED9 /* FilterInvestments */,
 				556C30E92201334400CCCFC5 /* FundsInvestments */,
 			);
 			path = Scenes;
@@ -476,6 +490,7 @@
 			files = (
 				A279EFD721B1672300E39E1F /* SourceSansPro-LightIt.otf in Resources */,
 				A279EFDF21B1672300E39E1F /* FontAwesome.ttf in Resources */,
+				55442C452204CD4A000A9ED9 /* FilterInvestments.storyboard in Resources */,
 				556C30EF220142DF00CCCFC5 /* FundsInvestments.storyboard in Resources */,
 				A279EFDC21B1672300E39E1F /* SourceSansPro-BoldIt.otf in Resources */,
 				A279EFD821B1672300E39E1F /* SourceSansPro-SemiboldIt.otf in Resources */,
@@ -615,6 +630,7 @@
 			files = (
 				A279EF9D21B1667600E39E1F /* ViewController.swift in Sources */,
 				A279EFE421B1683F00E39E1F /* Colors.swift in Sources */,
+				55442C472204D0AD000A9ED9 /* FilterInvestmentsViewController.swift in Sources */,
 				559CB2662203CB3700841C61 /* Extension+UIView.swift in Sources */,
 				556C30F92201455A00CCCFC5 /* FundsInvestmentsPresenter.swift in Sources */,
 				55F42527220227BA008B3915 /* FormatterUtils.swift in Sources */,

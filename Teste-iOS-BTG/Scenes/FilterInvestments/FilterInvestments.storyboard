@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vB2-cs-If6">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceSansPro-Regular.otf">
+            <string>SourceSansPro-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Filter Investments View Controller-->
+        <scene sceneID="Q3a-zB-vEw">
+            <objects>
+                <viewController id="vB2-cs-If6" customClass="FilterInvestmentsViewController" customModule="Teste_iOS_BTG" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hcc-TA-TCZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="550"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nBK-g5-Q1g">
+                                <rect key="frame" x="0.0" y="64" width="375" height="436"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7PH-dS-ZqQ">
+                                <rect key="frame" x="0.0" y="500" width="375" height="50"/>
+                                <color key="backgroundColor" name="btg_blue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="dtN-va-f1h"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
+                                <state key="normal" title="FILTRAR">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bw7-YB-eCJ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="barTintColor" red="0.22964432839999999" green="0.2772013545" blue="0.34785941240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <textAttributes key="largeTitleTextAttributes">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Filtros" id="dAT-9P-ZmK">
+                                        <barButtonItem key="leftBarButtonItem" title="Limpar" id="kLo-pn-Rfo">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" image="closeIcon" id="0O0-8l-Q0P">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7PH-dS-ZqQ" firstAttribute="leading" secondItem="kgH-Kv-O9n" secondAttribute="leading" id="3BV-GY-ZAD"/>
+                            <constraint firstItem="nBK-g5-Q1g" firstAttribute="leading" secondItem="kgH-Kv-O9n" secondAttribute="leading" id="9W8-E9-daL"/>
+                            <constraint firstItem="kgH-Kv-O9n" firstAttribute="trailing" secondItem="nBK-g5-Q1g" secondAttribute="trailing" id="E9j-ro-Vv2"/>
+                            <constraint firstItem="kgH-Kv-O9n" firstAttribute="trailing" secondItem="7PH-dS-ZqQ" secondAttribute="trailing" id="Epe-Qa-YT2"/>
+                            <constraint firstItem="kgH-Kv-O9n" firstAttribute="bottom" secondItem="7PH-dS-ZqQ" secondAttribute="bottom" id="Ga3-8e-e3H"/>
+                            <constraint firstItem="Bw7-YB-eCJ" firstAttribute="top" secondItem="kgH-Kv-O9n" secondAttribute="top" id="grk-ye-V6i"/>
+                            <constraint firstItem="7PH-dS-ZqQ" firstAttribute="top" secondItem="nBK-g5-Q1g" secondAttribute="bottom" id="lJ8-qM-s3M"/>
+                            <constraint firstItem="Bw7-YB-eCJ" firstAttribute="trailing" secondItem="kgH-Kv-O9n" secondAttribute="trailing" id="uGh-Bd-Qln"/>
+                            <constraint firstItem="nBK-g5-Q1g" firstAttribute="top" secondItem="Bw7-YB-eCJ" secondAttribute="bottom" id="v2u-ca-zx9"/>
+                            <constraint firstItem="Bw7-YB-eCJ" firstAttribute="leading" secondItem="kgH-Kv-O9n" secondAttribute="leading" id="yCU-uB-OcX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kgH-Kv-O9n"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="550"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kAO-eF-tvP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="277.60000000000002" y="-132.68365817091455"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="closeIcon" width="21.5" height="21.5"/>
+        <namedColor name="btg_blue">
+            <color red="0.0" green="0.55699998140335083" blue="0.83099997043609619" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
