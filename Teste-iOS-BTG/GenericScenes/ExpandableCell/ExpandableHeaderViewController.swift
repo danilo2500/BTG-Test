@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ExpandableHeaderDelegate: class {
-    func didPressExpandButton(_ cell: UITableViewCell)
+    func didPressExpandCollapseButton(_ cell: UITableViewCell)
 }
 
 class ExpandableHeaderViewController: UITableViewCell {
@@ -61,15 +61,15 @@ class ExpandableHeaderViewController: UITableViewCell {
     }
     
     @IBAction func didPressExpandButton(_ sender: Any) {
-        showExpandableDetail()
-        setNeedsLayout()
-        delegate?.didPressExpandButton(self)
+        //showExpandableDetail()
+//        setNeedsLayout()
+        delegate?.didPressExpandCollapseButton(self)
     }
     
     @IBAction func didPressCollapseButton(_ sender: Any) {
-        hideExpandableDetail()
-        setNeedsLayout()
-        delegate?.didPressExpandButton(self)
+//        hideExpandableDetail()
+//        setNeedsLayout()
+        delegate?.didPressExpandCollapseButton(self)
     }
     
     func hideExpandableDetail() {

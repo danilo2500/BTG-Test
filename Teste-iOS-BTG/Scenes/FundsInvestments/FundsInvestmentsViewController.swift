@@ -143,7 +143,7 @@ extension FundsInvestmentsViewController: UITableViewDataSource, UITableViewDele
 }
 
 extension FundsInvestmentsViewController: ExpandableHeaderDelegate {
-    func didPressExpandButton(_ cell: UITableViewCell) {
+    func didPressExpandCollapseButton(_ cell: UITableViewCell) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         displayedFunds[indexPath.row].isShowingDetail.toggle()
         tableView.reloadData()
