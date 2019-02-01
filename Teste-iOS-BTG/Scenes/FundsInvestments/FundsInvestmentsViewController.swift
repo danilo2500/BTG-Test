@@ -84,6 +84,12 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
             expandableHeader,
             forCellReuseIdentifier: ExpandableHeaderViewModels.ExpandableHeader.ViewModel.reuseIdentifier
         )
+        
+        let riskHeader = UINib(nibName: "RiskHeader", bundle: nil)
+        tableView.register(
+            riskHeader,
+            forCellReuseIdentifier: RiskHeaderModels.RiskHeader.ViewModel.reuseIdentifier
+        )
     }
     
     private func configureTableView() {
@@ -108,42 +114,70 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
 
 extension FundsInvestmentsViewController: UITableViewDataSource, UITableViewDelegate {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return displayedFunds.count
+        
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            return displayedFunds.isEmpty ? 0 : displayedFunds.count
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(
-            withIdentifier: ExpandableHeaderViewModels.ExpandableHeader.ViewModel.reuseIdentifier,
-            for: indexPath) as? ExpandableHeaderViewController
-        cell?.delegate = self
         
-        let displayFund = displayedFunds[indexPath.row]
-        cell?.viewModel = ExpandableHeaderViewModels.Fund.ViewModel(
-            product: displayFund.product,
-            categoryDescription: displayFund.categoryDescription,
-            monthProfitability: displayFund.monthProfitability,
-            yearProfitability: displayFund.yearProfitability,
-            twelveMonthsProfitability: displayFund.twelveMonthsProfitability,
-            minimumInitialInvestment: displayFund.minimumInitialInvestment,
-            manager: displayFund.manager,
-            begin: displayFund.begin,
-            netEquity: displayFund.netEquity,
-            investimentQuota: displayFund.investimentQuota,
-            riskColor: displayFund.riskLevel?.representativeColor,
-            isShowingDetail: displayFund.isShowingDetail
-        )
-        
-        return cell ?? UITableViewCell()
-    }
-//
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if displayedFunds[indexPath.row].isShowingDetail {
-            return ExpandableHeaderViewModels.ExpandableHeader.ViewModel.openedCellHeight
-        } else {
-            return ExpandableHeaderViewModels.ExpandableHeader.ViewModel.closedCellHeight
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: RiskHeaderModels.RiskHeader.ViewModel.reuseIdentifier,
+                for: indexPath
+            )
+            return cell
         }
         
+        if indexPath.section == 1 {
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: ExpandableHeaderViewModels.ExpandableHeader.ViewModel.reuseIdentifier,
+                for: indexPath) as! ExpandableHeaderViewController
+            cell.delegate = self
+            
+            let displayFund = displayedFunds[indexPath.row]
+            cell.viewModel = ExpandableHeaderViewModels.Fund.ViewModel(
+                product: displayFund.product,
+                categoryDescription: displayFund.categoryDescription,
+                monthProfitability: displayFund.monthProfitability,
+                yearProfitability: displayFund.yearProfitability,
+                twelveMonthsProfitability: displayFund.twelveMonthsProfitability,
+                minimumInitialInvestment: displayFund.minimumInitialInvestment,
+                manager: displayFund.manager,
+                begin: displayFund.begin,
+                netEquity: displayFund.netEquity,
+                investimentQuota: displayFund.investimentQuota,
+                riskColor: displayFund.riskLevel?.representativeColor,
+                isShowingDetail: displayFund.isShowingDetail
+            )
+            
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.section == 1 {
+            if displayedFunds[indexPath.row].isShowingDetail {
+                return ExpandableHeaderViewModels.ExpandableHeader.ViewModel.openedCellHeight
+            } else {
+                return ExpandableHeaderViewModels.ExpandableHeader.ViewModel.closedCellHeight
+            }
+        }
+        
+        return UITableView.automaticDimension
     }
 }
 
