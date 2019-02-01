@@ -31,9 +31,6 @@ class ExpandableHeaderViewController: UITableViewCell {
 
     weak var delegate: ExpandableHeaderDelegate?
     
-    static let openedCellHeight: CGFloat = 349.5
-    static let closedCellHeight: CGFloat = 180
-    
     var viewModel: ExpandableHeaderViewModels.Fund.ViewModel? {
         didSet {
             didSetViewModel()

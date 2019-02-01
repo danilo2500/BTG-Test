@@ -80,11 +80,14 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
     
     private func registerNibFiles() {
         let expandableHeader = UINib(nibName: "ExpandableHeader", bundle: nil)
-        tableView.register(expandableHeader, forCellReuseIdentifier: "expandableHeader")
+        tableView.register(
+            expandableHeader,
+            forCellReuseIdentifier: ExpandableHeaderViewModels.ExpandableHeader.ViewModel.reuseIdentifier
+        )
     }
     
     private func configureTableView() {
-        tableView.estimatedRowHeight = ExpandableHeaderViewController.closedCellHeight
+        tableView.estimatedRowHeight = ExpandableHeaderViewModels.ExpandableHeader.ViewModel.closedCellHeight
         tableView.rowHeight = UITableView.automaticDimension
     }
     
@@ -110,11 +113,13 @@ extension FundsInvestmentsViewController: UITableViewDataSource, UITableViewDele
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "expandableHeader", for: indexPath) as! ExpandableHeaderViewController
-        cell.delegate = self
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: ExpandableHeaderViewModels.ExpandableHeader.ViewModel.reuseIdentifier,
+            for: indexPath) as? ExpandableHeaderViewController
+        cell?.delegate = self
         
         let displayFund = displayedFunds[indexPath.row]
-        cell.viewModel = ExpandableHeaderViewModels.Fund.ViewModel(
+        cell?.viewModel = ExpandableHeaderViewModels.Fund.ViewModel(
             product: displayFund.product,
             categoryDescription: displayFund.categoryDescription,
             monthProfitability: displayFund.monthProfitability,
@@ -129,14 +134,14 @@ extension FundsInvestmentsViewController: UITableViewDataSource, UITableViewDele
             isShowingDetail: displayFund.isShowingDetail
         )
         
-        return cell
+        return cell ?? UITableViewCell()
     }
 //
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if displayedFunds[indexPath.row].isShowingDetail {
-            return ExpandableHeaderViewController.openedCellHeight
+            return ExpandableHeaderViewModels.ExpandableHeader.ViewModel.openedCellHeight
         } else {
-            return ExpandableHeaderViewController.closedCellHeight
+            return ExpandableHeaderViewModels.ExpandableHeader.ViewModel.closedCellHeight
         }
         
     }

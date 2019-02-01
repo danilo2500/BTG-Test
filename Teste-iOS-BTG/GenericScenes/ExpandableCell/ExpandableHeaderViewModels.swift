@@ -10,6 +10,19 @@ import UIKit
 
 class ExpandableHeaderViewModels {
     
+    struct ExpandableHeader {
+        
+        struct Request {}
+        
+        struct Response {}
+        
+        struct ViewModel {
+            static let openedCellHeight: CGFloat = 349.5
+            static let closedCellHeight: CGFloat = 180
+            static let reuseIdentifier = "ExpandableHeader"
+        }
+    }
+    
     struct Fund {
         
         struct Request {}
