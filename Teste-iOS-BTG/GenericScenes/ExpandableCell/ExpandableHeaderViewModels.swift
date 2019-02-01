@@ -28,6 +28,7 @@ class ExpandableHeaderViewModels {
             let netEquity: String
             let investimentQuota: String
             let riskColor: UIColor?
+            var isShowingDetail: Bool
         }
     }
 }

@@ -53,7 +53,11 @@ class ExpandableHeaderViewController: UITableViewCell {
         beginLabel.text = viewModel.begin
         netEquityLabel.text = viewModel.netEquity
         riskView.backgroundColor = viewModel.riskColor ?? UIColor.clear
-        
+        if viewModel.isShowingDetail {
+            showExpandableDetail()
+        } else {
+            hideExpandableDetail()
+        }
     }
     
     @IBAction func didPressExpandButton(_ sender: Any) {
@@ -66,11 +70,6 @@ class ExpandableHeaderViewController: UITableViewCell {
         hideExpandableDetail()
         setNeedsLayout()
         delegate?.didPressExpandButton(self)
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        hideExpandableDetail()
     }
     
     func hideExpandableDetail() {
