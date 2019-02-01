@@ -7,6 +7,7 @@ target 'Teste-iOS-BTG' do
 
   # Pods for Teste-iOS-BTG
   pod 'Moya'
+  pod 'Presentr'
 
   target 'Teste-iOS-BTGTests' do
     inherit! :search_paths
