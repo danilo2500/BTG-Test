@@ -338,7 +338,7 @@
                     <constraint firstItem="o99-aO-deC" firstAttribute="top" secondItem="W6J-VI-e9x" secondAttribute="top" constant="15" id="lEX-oE-Wb9"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.94891661405563354" green="0.94907897710800171" blue="0.94890636205673218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="beginLabel" destination="fPU-Ch-eOv" id="pL5-DG-bdr"/>
                 <outlet property="categoryLabel" destination="cHM-dF-fwl" id="pRe-fF-uVb"/>

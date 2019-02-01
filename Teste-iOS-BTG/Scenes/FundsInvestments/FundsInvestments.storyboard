@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +20,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kvC-Ie-5fx">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" id="UYi-LB-Mv2">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -30,9 +31,11 @@
                                             <subviews>
                                                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="keX-9Z-vsD">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </searchBar>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="keX-9Z-vsD" firstAttribute="top" secondItem="2Fa-WM-IMX" secondAttribute="top" id="YYk-tS-aV0"/>
                                                 <constraint firstAttribute="trailing" secondItem="keX-9Z-vsD" secondAttribute="trailing" id="hUr-iF-m4b"/>
@@ -40,6 +43,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="keX-9Z-vsD" secondAttribute="bottom" id="pta-Wy-azr"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -48,7 +52,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstItem="c3V-ee-8gh" firstAttribute="trailing" secondItem="kvC-Ie-5fx" secondAttribute="trailing" id="EaF-V4-znj"/>
                             <constraint firstItem="c3V-ee-8gh" firstAttribute="bottom" secondItem="kvC-Ie-5fx" secondAttribute="bottom" id="LVT-kz-Ti7"/>
@@ -94,4 +98,9 @@
             <point key="canvasLocation" x="578" y="2722"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="background">
+            <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
