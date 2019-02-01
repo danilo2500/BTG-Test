@@ -115,16 +115,18 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
 extension FundsInvestmentsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         switch section {
         case 0:
-            return 1
+            return 0
         case 1:
-            return displayedFunds.isEmpty ? 0 : displayedFunds.count
+            return 0
+        case 2:
+            return displayedFunds.count
         default:
             return 0
         }
@@ -132,15 +134,7 @@ extension FundsInvestmentsViewController: UITableViewDataSource, UITableViewDele
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(
-                withIdentifier: RiskHeaderModels.RiskHeader.ViewModel.reuseIdentifier,
-                for: indexPath
-            )
-            return cell
-        }
-        
-        if indexPath.section == 1 {
+        if indexPath.section == 2 {
             let cell = tableView.dequeueReusableCell(
                 withIdentifier: ExpandableHeaderViewModels.ExpandableHeader.ViewModel.reuseIdentifier,
                 for: indexPath) as! ExpandableHeaderViewController
@@ -169,7 +163,7 @@ extension FundsInvestmentsViewController: UITableViewDataSource, UITableViewDele
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        if indexPath.section == 1 {
+        if indexPath.section == 2 {
             if displayedFunds[indexPath.row].isShowingDetail {
                 return ExpandableHeaderViewModels.ExpandableHeader.ViewModel.openedCellHeight
             } else {
@@ -179,6 +173,29 @@ extension FundsInvestmentsViewController: UITableViewDataSource, UITableViewDele
         
         return UITableView.automaticDimension
     }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        switch section {
+        case 0:
+             return tableView.dequeueReusableCell(withIdentifier: "SearchCell")!
+        case 1:
+            return tableView.dequeueReusableCell(withIdentifier: RiskHeaderModels.RiskHeader.ViewModel.reuseIdentifier)!
+        default:
+            return nil
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch section {
+        case 0:
+            return 44
+        case 1:
+            return 44
+        default:
+            return 0
+        }
+    }
+    
 }
 
 extension FundsInvestmentsViewController: ExpandableHeaderDelegate {
