@@ -6,7 +6,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -17,83 +16,83 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="UITableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="XlI-um-QUI">
-                    <rect key="frame" x="20" y="44.5" width="335" height="11"/>
-                    <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="rtL-EX-770">
-                            <rect key="frame" x="0.0" y="0.0" width="80.5" height="11"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EtO-Mz-Cqe">
-                                    <rect key="frame" x="0.0" y="0.0" width="6" height="11"/>
-                                    <color key="backgroundColor" name="btg_blue"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="6" id="TAg-2V-jTX"/>
-                                    </constraints>
-                                </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONSERVADOR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEC-e1-4kC">
-                                    <rect key="frame" x="10" y="0.0" width="70.5" height="11"/>
-                                    <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="11"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                        </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="m2G-ZI-pJq">
-                            <rect key="frame" x="139" y="0.0" width="64.5" height="11"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UYu-WH-KSA">
-                                    <rect key="frame" x="0.0" y="0.0" width="6" height="11"/>
-                                    <color key="backgroundColor" name="btg_orange"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="6" id="rLB-EZ-PK8"/>
-                                    </constraints>
-                                </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MODERADO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GsB-hy-KaR">
-                                    <rect key="frame" x="10" y="0.0" width="54.5" height="11"/>
-                                    <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="11"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                        </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="DIn-jV-qMy">
-                            <rect key="frame" x="261.5" y="0.0" width="73.5" height="11"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VAx-DL-Gfs">
-                                    <rect key="frame" x="0.0" y="0.0" width="7" height="11"/>
-                                    <color key="backgroundColor" name="btg_brown"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="7" id="7fS-39-tmx"/>
-                                    </constraints>
-                                </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOFISTICADO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgi-Rh-Zc8">
-                                    <rect key="frame" x="11" y="0.0" width="62.5" height="11"/>
-                                    <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="11"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                        </stackView>
-                    </subviews>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="11" id="p9f-sZ-v1K"/>
-                    </constraints>
-                </stackView>
-            </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <constraints>
-                <constraint firstItem="XlI-um-QUI" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="7vW-Ex-YVk"/>
-                <constraint firstAttribute="trailing" secondItem="XlI-um-QUI" secondAttribute="trailing" constant="20" id="AAH-tC-iwW"/>
-                <constraint firstItem="XlI-um-QUI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="bM4-fv-4Eu"/>
-            </constraints>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="312.80000000000001" y="36.881559220389811"/>
-        </view>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Y2l-uq-kf8">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y2l-uq-kf8" id="yDA-NL-s05">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="XlI-um-QUI">
+                        <rect key="frame" x="31" y="16.5" width="313" height="11"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="rtL-EX-770">
+                                <rect key="frame" x="0.0" y="0.0" width="80.5" height="11"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EtO-Mz-Cqe">
+                                        <rect key="frame" x="0.0" y="0.0" width="6" height="11"/>
+                                        <color key="backgroundColor" name="btg_blue"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="6" id="TAg-2V-jTX"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONSERVADOR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEC-e1-4kC">
+                                        <rect key="frame" x="10" y="0.0" width="70.5" height="11"/>
+                                        <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="11"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="m2G-ZI-pJq">
+                                <rect key="frame" x="128" y="0.0" width="64.5" height="11"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UYu-WH-KSA">
+                                        <rect key="frame" x="0.0" y="0.0" width="6" height="11"/>
+                                        <color key="backgroundColor" name="btg_orange"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="6" id="rLB-EZ-PK8"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MODERADO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GsB-hy-KaR">
+                                        <rect key="frame" x="10" y="0.0" width="54.5" height="11"/>
+                                        <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="11"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="DIn-jV-qMy">
+                                <rect key="frame" x="239.5" y="0.0" width="73.5" height="11"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VAx-DL-Gfs">
+                                        <rect key="frame" x="0.0" y="0.0" width="7" height="11"/>
+                                        <color key="backgroundColor" name="btg_brown"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="7" id="7fS-39-tmx"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOFISTICADO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgi-Rh-Zc8">
+                                        <rect key="frame" x="11" y="0.0" width="62.5" height="11"/>
+                                        <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="11"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="11" id="p9f-sZ-v1K"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="XlI-um-QUI" secondAttribute="trailing" constant="15" id="GbQ-FV-2aC"/>
+                    <constraint firstItem="XlI-um-QUI" firstAttribute="centerY" secondItem="yDA-NL-s05" secondAttribute="centerY" id="iCa-Gs-b1b"/>
+                    <constraint firstItem="XlI-um-QUI" firstAttribute="leading" secondItem="yDA-NL-s05" secondAttribute="leadingMargin" constant="15" id="y4Z-eS-Zyi"/>
+                </constraints>
+            </tableViewCellContentView>
+        </tableViewCell>
     </objects>
     <resources>
         <namedColor name="btg_blue">
