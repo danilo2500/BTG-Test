@@ -61,14 +61,10 @@ class ExpandableHeaderViewController: UITableViewCell {
     }
     
     @IBAction func didPressExpandButton(_ sender: Any) {
-        //showExpandableDetail()
-//        setNeedsLayout()
         delegate?.didPressExpandCollapseButton(self)
     }
     
     @IBAction func didPressCollapseButton(_ sender: Any) {
-//        hideExpandableDetail()
-//        setNeedsLayout()
         delegate?.didPressExpandCollapseButton(self)
     }
     
