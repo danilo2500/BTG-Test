@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JBx-uZ-MfI" customClass="M13Checkbox">
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JBx-uZ-MfI" customClass="CheckBox" customModule="Teste_iOS_BTG" customModuleProvider="target">
                         <rect key="frame" x="30" y="8" width="30" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -27,7 +27,7 @@
             </view>
             <viewLayoutGuide key="safeArea" id="FdM-4I-WHw"/>
             <connections>
-                <outlet property="checkbox" destination="JBx-uZ-MfI" id="ofR-YW-klv"/>
+                <outlet property="checkBox" destination="JBx-uZ-MfI" id="bLh-oy-TaL"/>
             </connections>
             <point key="canvasLocation" x="52.799999999999997" y="48.575712143928037"/>
         </collectionViewCell>

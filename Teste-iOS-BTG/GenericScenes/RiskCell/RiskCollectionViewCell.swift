@@ -11,16 +11,11 @@ import M13Checkbox
 
 class RiskCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var checkbox: M13Checkbox!
+    @IBOutlet weak var checkBox: CheckBox!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupCheckBox()
-    }
-    
-    private func setupCheckBox() {
-        checkbox.boxType = .square
-        
+       
     }
     
 }
