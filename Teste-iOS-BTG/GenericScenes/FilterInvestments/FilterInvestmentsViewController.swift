@@ -11,18 +11,40 @@ import UIKit
 class FilterInvestmentsViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
     
     var risks: [RiskModel] = [.conservative, .moderate, .sophisticated]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNibFiles()
+        setupLayout()
+    }
+    
+    private func setupLayout() {
+        tableView.tableFooterView = UIView()
     }
     
     private func registerNibFiles() {
         let riskCell = UINib(nibName: "RiskCollectionViewCell", bundle: nil)
         collectionView.register(riskCell, forCellWithReuseIdentifier: RiskCollectionViewCellModels.RiskCell.ViewModel.reuseIdentifier)
     
+    }
+}
+
+extension FilterInvestmentsViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: OptionCellModels.OptionCell.ViewModel.reuseIdentifier, for: indexPath)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return OptionCellModels.OptionCell.ViewModel.height
     }
 }
 
