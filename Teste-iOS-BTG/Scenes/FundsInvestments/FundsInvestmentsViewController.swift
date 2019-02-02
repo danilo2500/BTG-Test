@@ -22,7 +22,7 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
     @IBOutlet weak var tableView: UITableView!
     
     var interactor: FundsInvestmentsBusinessLogic?
-    var router: (NSObjectProtocol & FundsInvestmentsRoutingLogic )?
+    var router: (NSObjectProtocol & FundsInvestmentsRoutingLogic)?
     var displayedFunds: [FundsInvestments.FetchFunds.ViewModel.DisplayViewModel] = [] {
         didSet{
             
@@ -122,7 +122,17 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
     }
     
     @IBAction func didPressFilterButton(_ sender: Any) {
-        router?.routeToFilterInvestments()
+        
+        let filterTypes: [FilterType] = [
+            .risk(types: [.conservative, .moderate, .sophisticated]),
+            .category,
+            .minimumApplication,
+            .rescue,
+            .manager,
+            .orderBy(types: [.maxRescue, .minRescue])
+        ]
+        let filterComponents = FilterInvestmentsModels.Components.Response(filterTypes: filterTypes)
+        router?.routeToFilterInvestments(filterComponents: filterComponents)
     }
     
 }

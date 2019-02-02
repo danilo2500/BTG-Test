@@ -8,17 +8,51 @@
 
 import UIKit
 
-class FilterInvestmentsViewController: UIViewController {
+protocol FilterInvestmentsDisplayLogic: class {
+//    func displaySomething(viewModel: FilterInvestments.Something.ViewModel)
+}
+
+class FilterInvestmentsViewController: UIViewController, FilterInvestmentsDisplayLogic {
+    
+    var interactor: FilterInvestmentsBusinessLogic?
+    var router: (NSObjectProtocol & FilterInvestmentsRoutingLogic & FilterInvestmentsDataPassing)?
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
     
     var risks: [RiskModel] = [.conservative, .moderate, .sophisticated]
     
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = FilterInvestmentsInteractor()
+        let presenter = FilterInvestmentsPresenter()
+        let router = FilterInvestmentsRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNibFiles()
         setupLayout()
+        interactor?.fetchFilterOptions()
     }
     
     private func setupLayout() {

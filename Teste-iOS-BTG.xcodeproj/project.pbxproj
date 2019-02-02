@@ -14,6 +14,10 @@
 		554884EE2205F53D00F34C05 /* OptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554884ED2205F53D00F34C05 /* OptionCell.swift */; };
 		554884F02205F56100F34C05 /* OptionCellModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554884EF2205F56100F34C05 /* OptionCellModels.swift */; };
 		554884F22205F9A400F34C05 /* FilterInvestmentsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554884F12205F9A400F34C05 /* FilterInvestmentsModels.swift */; };
+		554884F82205FD0600F34C05 /* FilterInvestmentsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554884F72205FD0600F34C05 /* FilterInvestmentsRouter.swift */; };
+		554884FA2206019B00F34C05 /* FilterInvestmentsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554884F92206019B00F34C05 /* FilterInvestmentsInteractor.swift */; };
+		554884FC2206020B00F34C05 /* FilterInvestmentsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554884FB2206020B00F34C05 /* FilterInvestmentsPresenter.swift */; };
+		554884FE22062BC200F34C05 /* FilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554884FD22062BC200F34C05 /* FilterType.swift */; };
 		555EDB902201F52900977D96 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555EDB8F2201F52900977D96 /* Constants.swift */; };
 		556C30EF220142DF00CCCFC5 /* FundsInvestments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556C30EE220142DF00CCCFC5 /* FundsInvestments.storyboard */; };
 		556C30F12201432C00CCCFC5 /* FundsInvestmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C30F02201432C00CCCFC5 /* FundsInvestmentsViewController.swift */; };
@@ -94,6 +98,10 @@
 		554884ED2205F53D00F34C05 /* OptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCell.swift; sourceTree = "<group>"; };
 		554884EF2205F56100F34C05 /* OptionCellModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCellModels.swift; sourceTree = "<group>"; };
 		554884F12205F9A400F34C05 /* FilterInvestmentsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterInvestmentsModels.swift; sourceTree = "<group>"; };
+		554884F72205FD0600F34C05 /* FilterInvestmentsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterInvestmentsRouter.swift; sourceTree = "<group>"; };
+		554884F92206019B00F34C05 /* FilterInvestmentsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterInvestmentsInteractor.swift; sourceTree = "<group>"; };
+		554884FB2206020B00F34C05 /* FilterInvestmentsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterInvestmentsPresenter.swift; sourceTree = "<group>"; };
+		554884FD22062BC200F34C05 /* FilterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterType.swift; sourceTree = "<group>"; };
 		555EDB8F2201F52900977D96 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		556C30EE220142DF00CCCFC5 /* FundsInvestments.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FundsInvestments.storyboard; sourceTree = "<group>"; };
 		556C30F02201432C00CCCFC5 /* FundsInvestmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsInvestmentsViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +194,9 @@
 				55442C442204CD4A000A9ED9 /* FilterInvestments.storyboard */,
 				55442C462204D0AD000A9ED9 /* FilterInvestmentsViewController.swift */,
 				554884F12205F9A400F34C05 /* FilterInvestmentsModels.swift */,
+				554884F92206019B00F34C05 /* FilterInvestmentsInteractor.swift */,
+				554884FB2206020B00F34C05 /* FilterInvestmentsPresenter.swift */,
+				554884F72205FD0600F34C05 /* FilterInvestmentsRouter.swift */,
 			);
 			path = FilterInvestments;
 			sourceTree = "<group>";
@@ -234,6 +245,7 @@
 			children = (
 				556C30FD2201C8CE00CCCFC5 /* FundModel.swift */,
 				559CB25E2203817700841C61 /* RiskModel.swift */,
+				554884FD22062BC200F34C05 /* FilterType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -689,12 +701,15 @@
 			files = (
 				A279EF9D21B1667600E39E1F /* ViewController.swift in Sources */,
 				A279EFE421B1683F00E39E1F /* Colors.swift in Sources */,
+				554884F82205FD0600F34C05 /* FilterInvestmentsRouter.swift in Sources */,
+				554884FE22062BC200F34C05 /* FilterType.swift in Sources */,
 				55442C472204D0AD000A9ED9 /* FilterInvestmentsViewController.swift in Sources */,
 				559CB2662203CB3700841C61 /* Extension+UIView.swift in Sources */,
 				556C30F92201455A00CCCFC5 /* FundsInvestmentsPresenter.swift in Sources */,
 				55F42527220227BA008B3915 /* FormatterUtils.swift in Sources */,
 				554884EB2205F32400F34C05 /* UnderlineTextField.swift in Sources */,
 				5574E15D22053ECB00E9A47D /* RiskCollectionViewCellModels.swift in Sources */,
+				554884FA2206019B00F34C05 /* FilterInvestmentsInteractor.swift in Sources */,
 				55DE56E422046A0300076941 /* RiskHeaderModels.swift in Sources */,
 				5574E166220543FB00E9A47D /* CheckBox.swift in Sources */,
 				554884F02205F56100F34C05 /* OptionCellModels.swift in Sources */,
@@ -703,6 +718,7 @@
 				556C30F5220144B200CCCFC5 /* FundsInvestmentWorker.swift in Sources */,
 				556C30F12201432C00CCCFC5 /* FundsInvestmentsViewController.swift in Sources */,
 				55DE56EB22049AE100076941 /* SearchBarHeaderView.swift in Sources */,
+				554884FC2206020B00F34C05 /* FilterInvestmentsPresenter.swift in Sources */,
 				55F4252422021E96008B3915 /* FundsServiceAPI.swift in Sources */,
 				554884EE2205F53D00F34C05 /* OptionCell.swift in Sources */,
 				559CB25F2203817700841C61 /* RiskModel.swift in Sources */,

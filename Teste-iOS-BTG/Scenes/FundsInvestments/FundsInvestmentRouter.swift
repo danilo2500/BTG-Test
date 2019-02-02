@@ -14,9 +14,9 @@
 import UIKit
 import Presentr
 
-@objc protocol FundsInvestmentsRoutingLogic
+protocol FundsInvestmentsRoutingLogic
 {
-    func routeToFilterInvestments()
+    func routeToFilterInvestments(filterComponents: FilterInvestmentsModels.Components.Response)
 }
 
 protocol FundsInvestmentsDataPassing
@@ -49,11 +49,10 @@ class FundsInvestmentsRouter: NSObject, FundsInvestmentsRoutingLogic {
         return presentr
     }()
     
-
-    
-    func routeToFilterInvestments() {
+    func routeToFilterInvestments(filterComponents: FilterInvestmentsModels.Components.Response) {
         let storyboard = UIStoryboard(name: "FilterInvestments", bundle: nil)
         let destinationVC = storyboard.instantiateInitialViewController() as! FilterInvestmentsViewController
+        destinationVC.router!.dataStore.filterComponents = filterComponents
         navigateToFilterInvestments(source: viewController!, destination: destinationVC)
     }
     

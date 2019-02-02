@@ -7,3 +7,29 @@
 //
 
 import Foundation
+
+class FilterInvestmentsModels {
+    
+    struct Components {
+        struct Request {}
+        
+        struct Response {
+            var filterTypes: [FilterType]
+        }
+        
+        struct ViewModel {
+            struct RiskOption {
+                let risk: RiskModel
+                var isChecked: Bool
+            }
+            
+            struct FilterOption {
+                let filterType: FilterType
+                let placeholder: String
+            }
+            
+            let riskOptions: [RiskOption]
+            let filterOptions: [FilterOption]
+        }
+    }
+}
