@@ -36,21 +36,21 @@ class FundsInvestmentsWorker {
         }
     }
     
-    func searchFunds(request: FundsInvestments.FetchFunds.Request, funds: [FundModel]) -> FundsInvestments.FetchFunds.Response {
+    func searchFunds(request: FundsInvestments.FetchFunds.Request, funds: [FundModel], completion: @escaping(responseHandler)) {
         let filtered = funds.filter({ (fund) -> Bool in
             return fund.product?.localizedCaseInsensitiveContains(request.product ?? "") ?? false
         })
-        return FundsInvestments.FetchFunds.Response(funds: filtered, error: false, message: nil)
+        completion(FundsInvestments.FetchFunds.Response(funds: filtered, error: false, message: nil))
     }
     
-    func filterFunds(request: FundsInvestments.FetchFunds.Request, funds: [FundModel]) -> FundsInvestments.FetchFunds.Response {
+    func filterFunds(request: FundsInvestments.FetchFunds.Request, funds: [FundModel], completion: @escaping(responseHandler)) {
         let filtered = funds.filter({ (fund) -> Bool in
             if fund.detail?.categoryDescription?.localizedCaseInsensitiveContains(request.category ?? "") ?? false {
                 return true
             }
             return false
         })
-        return FundsInvestments.FetchFunds.Response(funds: filtered, error: false, message: nil)
+        completion(FundsInvestments.FetchFunds.Response(funds: filtered, error: false, message: nil))
     }
     
 }

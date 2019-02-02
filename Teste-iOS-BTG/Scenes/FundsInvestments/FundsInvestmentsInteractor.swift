@@ -16,6 +16,7 @@ protocol FundsInvestmentsBusinessLogic {
     
     func fetchFunds(request: FundsInvestments.FetchFunds.Request)
     func filterFunds(request: FundsInvestments.FetchFunds.Request)
+    func searchFunds(request: FundsInvestments.FetchFunds.Request)
 }
 
 protocol FundsInvestmentsDataStore {
@@ -46,19 +47,20 @@ class FundsInvestmentsInteractor: FundsInvestmentsBusinessLogic, FundsInvestment
                 self.presenter?.presentFunds(response: fundsResponse)
             }
         } else {
-            guard let funds = fundsResponse?.funds else { return }
+            guard let fundsStored = fundsResponse?.funds else { return }
             worker = FundsInvestmentsWorker()
-            let filtered = worker!.searchFunds(request: request, funds: funds)
-            presenter?.presentFunds(response: filtered )
+            worker?.searchFunds(request: request, funds: fundsStored, completion: { [weak self] (response) in
+                self?.presenter?.presentFunds(response: response)
+            })
         }
     }
     
     func filterFunds(request: FundsInvestments.FetchFunds.Request) {
  
-        guard let funds = fundsResponse?.funds else { return }
+        guard let fundsStored = fundsResponse?.funds else { return }
         worker = FundsInvestmentsWorker()
-        let filtered = worker!.filterFunds(request: request, funds: funds)
-        presenter?.presentFunds(response: filtered )
-        
+        worker!.filterFunds(request: request, funds: fundsStored, completion: { [weak self] (response) in
+            self?.presenter?.presentFunds(response: response)
+        })
     }
 }

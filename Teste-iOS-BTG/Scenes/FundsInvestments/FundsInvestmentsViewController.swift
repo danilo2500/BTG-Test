@@ -227,6 +227,6 @@ extension FundsInvestmentsViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         var request = FundsInvestments.FetchFunds.Request()
         request.product = searchText
-        interactor?.filterFunds(request: request)
+        interactor?.searchFunds(request: request)
     }
 }
