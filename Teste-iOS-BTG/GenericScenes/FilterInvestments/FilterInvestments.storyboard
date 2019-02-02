@@ -19,7 +19,7 @@
         <scene sceneID="Q3a-zB-vEw">
             <objects>
                 <viewController id="vB2-cs-If6" customClass="FilterInvestmentsViewController" customModule="Teste_iOS_BTG" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Hcc-TA-TCZ">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="Hcc-TA-TCZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="550"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

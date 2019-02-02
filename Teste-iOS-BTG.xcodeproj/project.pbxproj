@@ -175,7 +175,6 @@
 		556C30E82201332900CCCFC5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				55442C412204CCE1000A9ED9 /* FilterInvestments */,
 				556C30E92201334400CCCFC5 /* FundsInvestments */,
 			);
 			path = Scenes;
@@ -252,6 +251,7 @@
 		55F4253122027BD7008B3915 /* GenericScenes */ = {
 			isa = PBXGroup;
 			children = (
+				55442C412204CCE1000A9ED9 /* FilterInvestments */,
 				55DE56E722049A9C00076941 /* SearchBarHeader */,
 				55F4253522030985008B3915 /* ExpandableCell */,
 				55F4253222027BEA008B3915 /* RiskHeader */,

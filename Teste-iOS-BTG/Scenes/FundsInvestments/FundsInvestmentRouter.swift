@@ -12,6 +12,7 @@
 //
 
 import UIKit
+import Presentr
 
 @objc protocol FundsInvestmentsRoutingLogic
 {
@@ -24,10 +25,31 @@ protocol FundsInvestmentsDataPassing
 }
 
 class FundsInvestmentsRouter: NSObject, FundsInvestmentsRoutingLogic {
+    
     weak var viewController: FundsInvestmentsViewController?
     var dataStore: FundsInvestmentsDataStore?
     
     // MARK: Routing
+    
+    let presentr: Presentr = {
+        let width = ModalSize.full
+        let height = ModalSize.fluid(percentage: 0.90)
+        let center = ModalCenterPosition.customOrigin(origin: CGPoint(x: 0, y: UIScreen.main.bounds.height / 10))
+        let customType = PresentationType.custom(width: width, height: height, center: center)
+
+        let presentr = Presentr(presentationType: customType)
+        
+        presentr.transitionType = .coverVertical
+        presentr.dismissTransitionType = .crossDissolve
+        presentr.roundCorners = true
+        presentr.cornerRadius = 15
+        presentr.backgroundOpacity = 0.9
+        presentr.dismissOnSwipe = true
+        presentr.dismissOnSwipeDirection = .bottom
+        return presentr
+    }()
+    
+
     
     func routeToFilterInvestments() {
         let storyboard = UIStoryboard(name: "FilterInvestments", bundle: nil)
@@ -38,8 +60,7 @@ class FundsInvestmentsRouter: NSObject, FundsInvestmentsRoutingLogic {
     // MARK: Navigation
     
     func navigateToFilterInvestments(source: FundsInvestmentsViewController, destination: FilterInvestmentsViewController) {
-        source.present(destination, animated: true, completion: nil)
-      
+        source.customPresentViewController(presentr, viewController: destination, animated: true, completion: nil)
     }
     
     // MARK: Passing data
