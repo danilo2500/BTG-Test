@@ -10,7 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="SourceSansPro-Regular.otf">
+        <array key="SourceSansPro-Bold.otf">
+            <string>SourceSansPro-Bold</string>
+        </array>
+        <array key="SourceSansPro-Regular.ttf">
             <string>SourceSansPro-Regular</string>
         </array>
     </customFonts>
@@ -24,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nBK-g5-Q1g">
-                                <rect key="frame" x="0.0" y="64" width="375" height="436"/>
+                                <rect key="frame" x="0.0" y="204" width="375" height="296"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7PH-dS-ZqQ">
@@ -38,9 +41,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bw7-YB-eCJ">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bw7-YB-eCJ">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <color key="barTintColor" red="0.22964432839999999" green="0.2772013545" blue="0.34785941240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" red="0.20999985933303833" green="0.2574828565120697" blue="0.33227002620697021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </textAttributes>
@@ -58,18 +61,58 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dWN-cS-Xsw">
+                                <rect key="frame" x="0.0" y="114" width="375" height="90"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="sf3-WD-Gy2"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="n6Y-YM-Q1R">
+                                    <size key="itemSize" width="90" height="90"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vB2-cs-If6" id="gMc-Y7-i45"/>
+                                </connections>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yvg-mL-cI3">
+                                <rect key="frame" x="0.0" y="64" width="375" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REFINE SUA BUSCA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnO-Qc-M2R">
+                                        <rect key="frame" x="116.5" y="14" width="142" height="22"/>
+                                        <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="17"/>
+                                        <color key="textColor" red="0.30192413926124573" green="0.30198186635971069" blue="0.30192047357559204" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="bnO-Qc-M2R" firstAttribute="centerX" secondItem="Yvg-mL-cI3" secondAttribute="centerX" id="2mS-9K-DSU"/>
+                                    <constraint firstItem="bnO-Qc-M2R" firstAttribute="centerY" secondItem="Yvg-mL-cI3" secondAttribute="centerY" id="SnO-j4-Ycp"/>
+                                    <constraint firstAttribute="height" constant="50" id="Y7W-w7-a2Q"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstItem="7PH-dS-ZqQ" firstAttribute="leading" secondItem="kgH-Kv-O9n" secondAttribute="leading" id="3BV-GY-ZAD"/>
+                            <constraint firstItem="Yvg-mL-cI3" firstAttribute="trailing" secondItem="kgH-Kv-O9n" secondAttribute="trailing" id="4Gj-Fc-yRY"/>
                             <constraint firstItem="nBK-g5-Q1g" firstAttribute="leading" secondItem="kgH-Kv-O9n" secondAttribute="leading" id="9W8-E9-daL"/>
+                            <constraint firstItem="Yvg-mL-cI3" firstAttribute="leading" secondItem="kgH-Kv-O9n" secondAttribute="leading" id="AY7-Jh-2ab"/>
                             <constraint firstItem="kgH-Kv-O9n" firstAttribute="trailing" secondItem="nBK-g5-Q1g" secondAttribute="trailing" id="E9j-ro-Vv2"/>
                             <constraint firstItem="kgH-Kv-O9n" firstAttribute="trailing" secondItem="7PH-dS-ZqQ" secondAttribute="trailing" id="Epe-Qa-YT2"/>
                             <constraint firstItem="kgH-Kv-O9n" firstAttribute="bottom" secondItem="7PH-dS-ZqQ" secondAttribute="bottom" id="Ga3-8e-e3H"/>
+                            <constraint firstItem="Yvg-mL-cI3" firstAttribute="top" secondItem="Bw7-YB-eCJ" secondAttribute="bottom" id="Td9-tF-abY"/>
+                            <constraint firstItem="nBK-g5-Q1g" firstAttribute="top" secondItem="dWN-cS-Xsw" secondAttribute="bottom" id="bM0-Z9-unk"/>
+                            <constraint firstItem="dWN-cS-Xsw" firstAttribute="trailing" secondItem="kgH-Kv-O9n" secondAttribute="trailing" id="dJY-sz-Jan"/>
+                            <constraint firstItem="dWN-cS-Xsw" firstAttribute="top" secondItem="Yvg-mL-cI3" secondAttribute="bottom" id="f5A-Ct-LBX"/>
                             <constraint firstItem="Bw7-YB-eCJ" firstAttribute="top" secondItem="kgH-Kv-O9n" secondAttribute="top" id="grk-ye-V6i"/>
                             <constraint firstItem="7PH-dS-ZqQ" firstAttribute="top" secondItem="nBK-g5-Q1g" secondAttribute="bottom" id="lJ8-qM-s3M"/>
                             <constraint firstItem="Bw7-YB-eCJ" firstAttribute="trailing" secondItem="kgH-Kv-O9n" secondAttribute="trailing" id="uGh-Bd-Qln"/>
-                            <constraint firstItem="nBK-g5-Q1g" firstAttribute="top" secondItem="Bw7-YB-eCJ" secondAttribute="bottom" id="v2u-ca-zx9"/>
+                            <constraint firstItem="dWN-cS-Xsw" firstAttribute="leading" secondItem="kgH-Kv-O9n" secondAttribute="leading" id="xH3-eb-VwH"/>
                             <constraint firstItem="Bw7-YB-eCJ" firstAttribute="leading" secondItem="kgH-Kv-O9n" secondAttribute="leading" id="yCU-uB-OcX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kgH-Kv-O9n"/>
@@ -78,14 +121,20 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="550"/>
+                    <connections>
+                        <outlet property="collectionView" destination="dWN-cS-Xsw" id="J6o-u9-tIE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kAO-eF-tvP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="277.60000000000002" y="-132.68365817091455"/>
+            <point key="canvasLocation" x="277.60000000000002" y="-133.13343328335833"/>
         </scene>
     </scenes>
     <resources>
         <image name="closeIcon" width="21.5" height="21.5"/>
+        <namedColor name="background">
+            <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="btg_blue">
             <color red="0.0" green="0.55699998140335083" blue="0.83099997043609619" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
