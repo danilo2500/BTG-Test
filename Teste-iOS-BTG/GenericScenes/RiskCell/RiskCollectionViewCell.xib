@@ -8,26 +8,62 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceSansPro-Semibold.otf">
+            <string>SourceSansPro-Semibold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RiskCollectionViewCell" id="lHy-gM-qMB" customClass="RiskCollectionViewCell" customModule="Teste_iOS_BTG" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JBx-uZ-MfI" customClass="CheckBox" customModule="Teste_iOS_BTG" customModuleProvider="target">
-                        <rect key="frame" x="30" y="8" width="30" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JBx-uZ-MfI" customClass="CheckBox" customModule="Teste_iOS_BTG" customModuleProvider="target">
+                        <rect key="frame" x="25" y="8" width="30" height="30"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="9xX-9e-eVJ"/>
+                            <constraint firstAttribute="width" constant="30" id="oMg-wy-J89"/>
+                        </constraints>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xFq-UG-JsS">
+                        <rect key="frame" x="0.0" y="78" width="80" height="2"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="Y2q-X8-ZKu"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RISK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKa-A8-yTH">
+                        <rect key="frame" x="0.0" y="48" width="80" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="ddq-lv-h98"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="SourceSansPro-Semibold" family="Source Sans Pro" pointSize="12"/>
+                        <color key="textColor" red="0.41955912113189697" green="0.41963589191436768" blue="0.41955423355102539" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
+            <constraints>
+                <constraint firstItem="KKa-A8-yTH" firstAttribute="leading" secondItem="lHy-gM-qMB" secondAttribute="leading" id="8CQ-aP-NmV"/>
+                <constraint firstAttribute="bottom" secondItem="xFq-UG-JsS" secondAttribute="bottom" id="9hl-gm-gKd"/>
+                <constraint firstItem="xFq-UG-JsS" firstAttribute="top" secondItem="KKa-A8-yTH" secondAttribute="bottom" constant="8" id="ALr-Gd-pRV"/>
+                <constraint firstItem="JBx-uZ-MfI" firstAttribute="centerX" secondItem="FdM-4I-WHw" secondAttribute="centerX" id="T5C-pP-HsQ"/>
+                <constraint firstItem="xFq-UG-JsS" firstAttribute="leading" secondItem="lHy-gM-qMB" secondAttribute="leading" id="ZGt-hM-5SW"/>
+                <constraint firstAttribute="trailing" secondItem="xFq-UG-JsS" secondAttribute="trailing" id="gwx-A1-GYK"/>
+                <constraint firstAttribute="trailing" secondItem="KKa-A8-yTH" secondAttribute="trailing" id="paO-4p-fFW"/>
+                <constraint firstItem="JBx-uZ-MfI" firstAttribute="top" secondItem="FdM-4I-WHw" secondAttribute="top" constant="8" id="uYU-6E-5rb"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="FdM-4I-WHw"/>
             <connections>
                 <outlet property="checkBox" destination="JBx-uZ-MfI" id="bLh-oy-TaL"/>
+                <outlet property="riskLabel" destination="KKa-A8-yTH" id="9hI-e3-S5k"/>
+                <outlet property="riskLine" destination="xFq-UG-JsS" id="JjC-8a-9Qc"/>
             </connections>
             <point key="canvasLocation" x="52.799999999999997" y="48.575712143928037"/>
         </collectionViewCell>

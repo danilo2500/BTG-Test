@@ -11,6 +11,9 @@ import UIKit
 class FilterInvestmentsViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    var risks: [RiskModel] = [.conservative, .moderate, .sophisticated]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNibFiles()
@@ -25,11 +28,13 @@ class FilterInvestmentsViewController: UIViewController {
 
 extension FilterInvestmentsViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return risks.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RiskCollectionViewCellModels.RiskCell.ViewModel.reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RiskCollectionViewCellModels.RiskCell.ViewModel.reuseIdentifier, for: indexPath) as! RiskCollectionViewCell
+        let risk = risks[indexPath.row]
+        cell.viewModel = RiskCollectionViewCellModels.Risk.ViewModel(color: risk.representativeColor, title: risk.titleDescription)
         return cell
     }
     

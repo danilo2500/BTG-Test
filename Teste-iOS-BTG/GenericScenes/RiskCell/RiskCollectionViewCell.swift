@@ -7,15 +7,23 @@
 //
 
 import UIKit
-import M13Checkbox
 
 class RiskCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var checkBox: CheckBox!
+    @IBOutlet weak var riskLabel: UILabel!
+    @IBOutlet weak var riskLine: UIView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-       
+    var viewModel: RiskCollectionViewCellModels.Risk.ViewModel? {
+        didSet{
+            didSetViewModel()
+        }
+    }
+    
+    func didSetViewModel() {
+        guard let viewModel = viewModel else { return }
+        riskLine.backgroundColor = viewModel.color
+        riskLabel.text = viewModel.title.uppercased()
     }
     
 }

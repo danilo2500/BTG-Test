@@ -6,7 +6,7 @@
 //  Copyright © 2019 BTG Pactual. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class RiskCollectionViewCellModels {
     
@@ -16,9 +16,20 @@ class RiskCollectionViewCellModels {
         struct Response {}
         
         struct ViewModel {
-            static let height = 90
-            static let width = 90
+            static let height = 80
+            static let width = 80
             static let reuseIdentifier = "RiskCollectionViewCell"
+        }
+    }
+    
+    struct Risk {
+        struct Request {}
+        
+        struct Response {}
+        
+        struct ViewModel {
+            let color: UIColor
+            let title: String
         }
     }
 }

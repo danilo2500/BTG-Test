@@ -13,6 +13,17 @@ enum RiskModel: Int {
     case moderate = 2
     case sophisticated = 5
     
+    var titleDescription: String {
+        switch self {
+        case .conservative:
+            return "Conservador"
+        case .moderate:
+            return "Moderado"
+        case .sophisticated:
+            return "Sofisticado"
+        }
+    }
+    
     var representativeColor: UIColor {
         switch self {
         case .conservative:

@@ -13,7 +13,7 @@
         <array key="SourceSansPro-Bold.otf">
             <string>SourceSansPro-Bold</string>
         </array>
-        <array key="SourceSansPro-Regular.ttf">
+        <array key="SourceSansPro-Regular.otf">
             <string>SourceSansPro-Regular</string>
         </array>
     </customFonts>
@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nBK-g5-Q1g">
-                                <rect key="frame" x="0.0" y="204" width="375" height="296"/>
+                                <rect key="frame" x="0.0" y="194" width="375" height="306"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7PH-dS-ZqQ">
@@ -62,13 +62,13 @@
                                 </items>
                             </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dWN-cS-Xsw">
-                                <rect key="frame" x="0.0" y="114" width="375" height="90"/>
+                                <rect key="frame" x="0.0" y="114" width="375" height="80"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="sf3-WD-Gy2"/>
+                                    <constraint firstAttribute="height" constant="80" id="sf3-WD-Gy2"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="n6Y-YM-Q1R">
-                                    <size key="itemSize" width="90" height="90"/>
+                                    <size key="itemSize" width="80" height="80"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
