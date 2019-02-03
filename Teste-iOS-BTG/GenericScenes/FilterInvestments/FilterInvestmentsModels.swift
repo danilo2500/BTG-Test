@@ -25,7 +25,7 @@ class FilterInvestmentsModels {
             
             struct FilterOption {
                 let filterType: FilterType
-                let placeholder: String
+                var response: Any?
             }
             
             let riskOptions: [RiskOption]

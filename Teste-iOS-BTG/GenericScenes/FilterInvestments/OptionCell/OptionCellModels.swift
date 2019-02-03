@@ -27,8 +27,7 @@ class OptionCellModels {
         struct Response {}
         
         struct ViewModel {
-            let title: String
-            let placeholder: String
+            let filterType: FilterType
         }
     }
 }

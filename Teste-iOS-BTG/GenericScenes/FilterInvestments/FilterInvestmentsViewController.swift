@@ -78,7 +78,7 @@ extension FilterInvestmentsViewController: UITableViewDataSource, UITableViewDel
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: OptionCellModels.OptionCell.ViewModel.reuseIdentifier, for: indexPath) as! OptionCell
         if let displayFilter = displayedFilters?.filterOptions[indexPath.row] {
-            cell.viewModel = OptionCellModels.Option.ViewModel(title: displayFilter.filterType.description, placeholder: displayFilter.placeholder)
+            cell.viewModel = OptionCellModels.Option.ViewModel(filterType: displayFilter.filterType)
         }
         
         return cell

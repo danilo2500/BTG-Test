@@ -22,8 +22,26 @@ class OptionCell: UITableViewCell {
     private func didSetViewModel() {
         guard let viewModel = viewModel else { return }
         
-        titleLabel.text = viewModel.title.uppercased()
-        textField.placeholder = viewModel.placeholder
+        var placeholder: String!
+        switch viewModel.filterType {
+        case .category:
+            placeholder = "Todos(as)"
+            textField.keyboardType = .asciiCapable
+        case .minimumApplication:
+            placeholder = "Todos(as)"
+            textField.keyboardType = .decimalPad
+        case .rescue:
+            placeholder = "Todos(as)"
+            textField.keyboardType = .numberPad
+        case .manager:
+            placeholder = "Todos(as)"
+            textField.keyboardType = .asciiCapable
+        case .orderBy(let types):
+            placeholder = "Nenhum"
+        default: break
+        }
+        textField.placeholder = placeholder
+        titleLabel.text = viewModel.filterType.description.uppercased()
     }
     
     override func awakeFromNib() {

@@ -32,30 +32,15 @@ class FilterInvestmentsPresenter: FilterInvestmentsPresentationLogic {
                     ))
                 }
             case .category:
-                filterOptions.append(FilterInvestmentsModels.Components.ViewModel.FilterOption(
-                    filterType: filterType,
-                    placeholder: "Todos(as)"
-                ))
+                filterOptions.append(FilterInvestmentsModels.Components.ViewModel.FilterOption(filterType: filterType, response: nil))
             case .minimumApplication:
-                filterOptions.append(FilterInvestmentsModels.Components.ViewModel.FilterOption(
-                    filterType: filterType,
-                    placeholder: "Todos(as)"
-                ))
+                filterOptions.append(FilterInvestmentsModels.Components.ViewModel.FilterOption(filterType: filterType, response: nil))
             case .rescue:
-                filterOptions.append(FilterInvestmentsModels.Components.ViewModel.FilterOption(
-                    filterType: filterType,
-                    placeholder: "Todos(as)"
-                ))
+                filterOptions.append(FilterInvestmentsModels.Components.ViewModel.FilterOption(filterType: filterType, response: nil))
             case .manager:
-                filterOptions.append(FilterInvestmentsModels.Components.ViewModel.FilterOption(
-                    filterType: filterType,
-                    placeholder: "Todos(as)"
-                ))
+                filterOptions.append(FilterInvestmentsModels.Components.ViewModel.FilterOption(filterType: filterType, response: nil))
             case .orderBy(let types):
-                filterOptions.append(FilterInvestmentsModels.Components.ViewModel.FilterOption(
-                    filterType: filterType,
-                    placeholder: "Nenhum"
-                ))
+                filterOptions.append(FilterInvestmentsModels.Components.ViewModel.FilterOption(filterType: filterType, response: nil))
             }
         }
         let viewModel = FilterInvestmentsModels.Components.ViewModel(riskOptions: riskOptions, filterOptions: filterOptions)
