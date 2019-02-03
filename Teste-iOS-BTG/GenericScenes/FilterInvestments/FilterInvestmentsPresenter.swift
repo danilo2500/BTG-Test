@@ -10,7 +10,7 @@ import UIKit
 
 protocol FilterInvestmentsPresentationLogic
 {
-//    func presentSomething(response: FilterInvestments.Something.Response)
+    func presentFilterOptions(response: FilterInvestmentsModels.Components.Response)
 }
 
 class FilterInvestmentsPresenter: FilterInvestmentsPresentationLogic
@@ -19,9 +19,47 @@ class FilterInvestmentsPresenter: FilterInvestmentsPresentationLogic
     
     // MARK: Do something
 //
-//    func presentSomething(response: FilterInvestments.Something.Response)
-//    {
-//        let viewModel = FilterInvestments.Something.ViewModel()
-//        viewController?.displaySomething(viewModel: viewModel)
-//    }
+    func presentFilterOptions(response: FilterInvestmentsModels.Components.Response) {
+        var riskOptions: [FilterInvestmentsModels.Components.ViewModel.RiskOption] = []
+        var filterOptions: [FilterInvestmentsModels.Components.ViewModel.FilterOption] = []
+        
+        for filterType in response.filterTypes {
+            switch filterType {
+            case .risk(let types):
+                for type in types {
+                    riskOptions.append(FilterInvestmentsModels.Components.ViewModel.RiskOption(
+                        risk: type,
+                        isChecked: true
+                    ))
+                }
+            case .category:
+                filterOptions.append(FilterInvestmentsModels.Components.ViewModel.FilterOption(
+                    filterType: filterType,
+                    placeholder: "Todos(as)"
+                ))
+            case .minimumApplication:
+                filterOptions.append(FilterInvestmentsModels.Components.ViewModel.FilterOption(
+                    filterType: filterType,
+                    placeholder: "Todos(as)"
+                ))
+            case .rescue:
+                filterOptions.append(FilterInvestmentsModels.Components.ViewModel.FilterOption(
+                    filterType: filterType,
+                    placeholder: "Todos(as)"
+                ))
+            case .manager:
+                filterOptions.append(FilterInvestmentsModels.Components.ViewModel.FilterOption(
+                    filterType: filterType,
+                    placeholder: "Todos(as)"
+                ))
+            case .orderBy(let types):
+                filterOptions.append(FilterInvestmentsModels.Components.ViewModel.FilterOption(
+                    filterType: filterType,
+                    placeholder: "Nenhum"
+                ))
+            }
+        }
+        let viewModel = FilterInvestmentsModels.Components.ViewModel(riskOptions: riskOptions, filterOptions: filterOptions)
+        viewController?.displayFilters(viewModel: viewModel)
+    }
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol FilterInvestmentsDisplayLogic: class {
-//    func displaySomething(viewModel: FilterInvestments.Something.ViewModel)
+    func displayFilters(viewModel: FilterInvestmentsModels.Components.ViewModel)
 }
 
 class FilterInvestmentsViewController: UIViewController, FilterInvestmentsDisplayLogic {
@@ -20,22 +20,19 @@ class FilterInvestmentsViewController: UIViewController, FilterInvestmentsDispla
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
     
-    var risks: [RiskModel] = [.conservative, .moderate, .sophisticated]
+    var displayedFilters: FilterInvestmentsModels.Components.ViewModel?
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-    {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
     }
     
-    required init?(coder aDecoder: NSCoder)
-    {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
     
-    private func setup()
-    {
+    private func setup() {
         let viewController = self
         let interactor = FilterInvestmentsInteractor()
         let presenter = FilterInvestmentsPresenter()
@@ -51,11 +48,11 @@ class FilterInvestmentsViewController: UIViewController, FilterInvestmentsDispla
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNibFiles()
-        setupLayout()
+        setupTableView()
         interactor?.fetchFilterOptions()
     }
     
-    private func setupLayout() {
+    private func setupTableView() {
         tableView.tableFooterView = UIView()
     }
     
@@ -64,16 +61,26 @@ class FilterInvestmentsViewController: UIViewController, FilterInvestmentsDispla
         collectionView.register(riskCell, forCellWithReuseIdentifier: RiskCollectionViewCellModels.RiskCell.ViewModel.reuseIdentifier)
     
     }
+    
+    func displayFilters(viewModel: FilterInvestmentsModels.Components.ViewModel) {
+        displayedFilters = viewModel
+        collectionView.reloadData()
+        tableView.reloadData()
+    }
 }
 
 extension FilterInvestmentsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return displayedFilters?.filterOptions.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: OptionCellModels.OptionCell.ViewModel.reuseIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: OptionCellModels.OptionCell.ViewModel.reuseIdentifier, for: indexPath) as! OptionCell
+        if let displayFilter = displayedFilters?.filterOptions[indexPath.row] {
+            cell.viewModel = OptionCellModels.Option.ViewModel(title: displayFilter.filterType.description, placeholder: displayFilter.placeholder)
+        }
+        
         return cell
     }
     
@@ -84,13 +91,14 @@ extension FilterInvestmentsViewController: UITableViewDataSource, UITableViewDel
 
 extension FilterInvestmentsViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return risks.count
+        return displayedFilters?.riskOptions.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RiskCollectionViewCellModels.RiskCell.ViewModel.reuseIdentifier, for: indexPath) as! RiskCollectionViewCell
-        let risk = risks[indexPath.row]
-        cell.viewModel = RiskCollectionViewCellModels.Risk.ViewModel(color: risk.representativeColor, title: risk.titleDescription)
+        if let displayRisk = displayedFilters?.riskOptions[indexPath.row] {
+            cell.viewModel = RiskCollectionViewCellModels.Risk.ViewModel(color: displayRisk.risk.representativeColor, title: displayRisk.risk.titleDescription)
+        }
         return cell
     }
     

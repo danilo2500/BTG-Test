@@ -23,10 +23,8 @@ class FilterInvestmentsInteractor: FilterInvestmentsBusinessLogic, FilterInvestm
     var presenter: FilterInvestmentsPresentationLogic?
 
     func fetchFilterOptions() {
-        
         if let filterComponents = filterComponents {
-            
+            presenter?.presentFilterOptions(response: filterComponents)
         }
-//        presenter?.presentSomething(response: response)
     }
 }
