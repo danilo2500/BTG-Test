@@ -13,7 +13,7 @@
         <array key="SourceSansPro-Bold.otf">
             <string>SourceSansPro-Bold</string>
         </array>
-        <array key="SourceSansPro-Regular.otf">
+        <array key="SourceSansPro-Regular.ttf">
             <string>SourceSansPro-Regular</string>
         </array>
         <array key="SourceSansPro-Semibold.otf">
@@ -30,11 +30,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nBK-g5-Q1g">
-                                <rect key="frame" x="0.0" y="194" width="375" height="306"/>
+                                <rect key="frame" x="0.0" y="114" width="375" height="386"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="dWN-cS-Xsw">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="80" id="sf3-WD-Gy2"/>
+                                    </constraints>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="n6Y-YM-Q1R">
+                                        <size key="itemSize" width="80" height="80"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                    <cells/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="vB2-cs-If6" id="gMc-Y7-i45"/>
+                                    </connections>
+                                </collectionView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OptionCell" rowHeight="65" id="CHl-1d-MLb" customClass="OptionCell" customModule="Teste_iOS_BTG" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="65"/>
+                                        <rect key="frame" x="0.0" y="108" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CHl-1d-MLb" id="wbe-Sc-UGa">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
@@ -105,23 +123,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dWN-cS-Xsw">
-                                <rect key="frame" x="3" y="114" width="375" height="80"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="sf3-WD-Gy2"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="n6Y-YM-Q1R">
-                                    <size key="itemSize" width="80" height="80"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="vB2-cs-If6" id="gMc-Y7-i45"/>
-                                </connections>
-                            </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yvg-mL-cI3">
                                 <rect key="frame" x="0.0" y="64" width="375" height="50"/>
                                 <subviews>
@@ -150,13 +151,10 @@
                             <constraint firstItem="kgH-Kv-O9n" firstAttribute="trailing" secondItem="7PH-dS-ZqQ" secondAttribute="trailing" id="Epe-Qa-YT2"/>
                             <constraint firstItem="kgH-Kv-O9n" firstAttribute="bottom" secondItem="7PH-dS-ZqQ" secondAttribute="bottom" id="Ga3-8e-e3H"/>
                             <constraint firstItem="Yvg-mL-cI3" firstAttribute="top" secondItem="Bw7-YB-eCJ" secondAttribute="bottom" id="Td9-tF-abY"/>
-                            <constraint firstItem="nBK-g5-Q1g" firstAttribute="top" secondItem="dWN-cS-Xsw" secondAttribute="bottom" id="bM0-Z9-unk"/>
-                            <constraint firstItem="dWN-cS-Xsw" firstAttribute="trailing" secondItem="kgH-Kv-O9n" secondAttribute="trailing" constant="3" id="dJY-sz-Jan"/>
-                            <constraint firstItem="dWN-cS-Xsw" firstAttribute="top" secondItem="Yvg-mL-cI3" secondAttribute="bottom" id="f5A-Ct-LBX"/>
                             <constraint firstItem="Bw7-YB-eCJ" firstAttribute="top" secondItem="kgH-Kv-O9n" secondAttribute="top" id="grk-ye-V6i"/>
                             <constraint firstItem="7PH-dS-ZqQ" firstAttribute="top" secondItem="nBK-g5-Q1g" secondAttribute="bottom" id="lJ8-qM-s3M"/>
+                            <constraint firstItem="nBK-g5-Q1g" firstAttribute="top" secondItem="Yvg-mL-cI3" secondAttribute="bottom" id="ryV-ZP-V9n"/>
                             <constraint firstItem="Bw7-YB-eCJ" firstAttribute="trailing" secondItem="kgH-Kv-O9n" secondAttribute="trailing" id="uGh-Bd-Qln"/>
-                            <constraint firstItem="dWN-cS-Xsw" firstAttribute="leading" secondItem="kgH-Kv-O9n" secondAttribute="leading" constant="3" id="xH3-eb-VwH"/>
                             <constraint firstItem="Bw7-YB-eCJ" firstAttribute="leading" secondItem="kgH-Kv-O9n" secondAttribute="leading" id="yCU-uB-OcX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kgH-Kv-O9n"/>
