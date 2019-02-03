@@ -25,7 +25,7 @@ extension UIView {
         layer.borderColor = color.cgColor
     }
     
-    func addUnderlineBottom(color: UIColor ){
+    func addUnderlineBottom(color: UIColor) {
         let border = CALayer()
         let width = CGFloat(1.0)
         border.borderColor = color.cgColor

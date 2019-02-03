@@ -106,7 +106,7 @@
                                 </items>
                             </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dWN-cS-Xsw">
-                                <rect key="frame" x="0.0" y="114" width="375" height="80"/>
+                                <rect key="frame" x="3" y="114" width="375" height="80"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="sf3-WD-Gy2"/>
@@ -151,12 +151,12 @@
                             <constraint firstItem="kgH-Kv-O9n" firstAttribute="bottom" secondItem="7PH-dS-ZqQ" secondAttribute="bottom" id="Ga3-8e-e3H"/>
                             <constraint firstItem="Yvg-mL-cI3" firstAttribute="top" secondItem="Bw7-YB-eCJ" secondAttribute="bottom" id="Td9-tF-abY"/>
                             <constraint firstItem="nBK-g5-Q1g" firstAttribute="top" secondItem="dWN-cS-Xsw" secondAttribute="bottom" id="bM0-Z9-unk"/>
-                            <constraint firstItem="dWN-cS-Xsw" firstAttribute="trailing" secondItem="kgH-Kv-O9n" secondAttribute="trailing" id="dJY-sz-Jan"/>
+                            <constraint firstItem="dWN-cS-Xsw" firstAttribute="trailing" secondItem="kgH-Kv-O9n" secondAttribute="trailing" constant="3" id="dJY-sz-Jan"/>
                             <constraint firstItem="dWN-cS-Xsw" firstAttribute="top" secondItem="Yvg-mL-cI3" secondAttribute="bottom" id="f5A-Ct-LBX"/>
                             <constraint firstItem="Bw7-YB-eCJ" firstAttribute="top" secondItem="kgH-Kv-O9n" secondAttribute="top" id="grk-ye-V6i"/>
                             <constraint firstItem="7PH-dS-ZqQ" firstAttribute="top" secondItem="nBK-g5-Q1g" secondAttribute="bottom" id="lJ8-qM-s3M"/>
                             <constraint firstItem="Bw7-YB-eCJ" firstAttribute="trailing" secondItem="kgH-Kv-O9n" secondAttribute="trailing" id="uGh-Bd-Qln"/>
-                            <constraint firstItem="dWN-cS-Xsw" firstAttribute="leading" secondItem="kgH-Kv-O9n" secondAttribute="leading" id="xH3-eb-VwH"/>
+                            <constraint firstItem="dWN-cS-Xsw" firstAttribute="leading" secondItem="kgH-Kv-O9n" secondAttribute="leading" constant="3" id="xH3-eb-VwH"/>
                             <constraint firstItem="Bw7-YB-eCJ" firstAttribute="leading" secondItem="kgH-Kv-O9n" secondAttribute="leading" id="yCU-uB-OcX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kgH-Kv-O9n"/>

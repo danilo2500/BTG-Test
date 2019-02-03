@@ -13,12 +13,11 @@ protocol FilterInvestmentsPresentationLogic
     func presentFilterOptions(response: FilterInvestmentsModels.Components.Response)
 }
 
-class FilterInvestmentsPresenter: FilterInvestmentsPresentationLogic
-{
+class FilterInvestmentsPresenter: FilterInvestmentsPresentationLogic {
     weak var viewController: FilterInvestmentsDisplayLogic?
     
     // MARK: Do something
-//
+
     func presentFilterOptions(response: FilterInvestmentsModels.Components.Response) {
         var riskOptions: [FilterInvestmentsModels.Components.ViewModel.RiskOption] = []
         var filterOptions: [FilterInvestmentsModels.Components.ViewModel.FilterOption] = []

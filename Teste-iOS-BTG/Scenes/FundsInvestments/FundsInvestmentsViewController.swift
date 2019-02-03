@@ -23,11 +23,7 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
     
     var interactor: FundsInvestmentsBusinessLogic?
     var router: (NSObjectProtocol & FundsInvestmentsRoutingLogic)?
-    var displayedFunds: [FundsInvestments.FetchFunds.ViewModel.DisplayViewModel] = [] {
-        didSet{
-            
-        }
-    }
+    var displayedFunds: [FundsInvestments.FetchFunds.ViewModel.DisplayViewModel] = []
     // MARK: Object lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -117,9 +113,7 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
         tableView.reloadData()
     }
     
-    func errorFetchingFunds(message: String) {
-        
-    }
+    func errorFetchingFunds(message: String) {}
     
     @IBAction func didPressFilterButton(_ sender: Any) {
         
