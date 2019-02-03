@@ -57,11 +57,26 @@ class ExpandableHeaderViewController: UITableViewCell {
         }
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        expandableDetailView.isHidden = true
+        expandButton.isHidden = false
+        collapseButton.isHidden = true
+    }
+    
     @IBAction func didPressExpandButton(_ sender: Any) {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.showExpandableDetail()
+            self.layoutIfNeeded()
+        })
         delegate?.didPressExpandCollapseButton(self)
     }
     
     @IBAction func didPressCollapseButton(_ sender: Any) {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.hideExpandableDetail()
+            self.layoutIfNeeded()
+        })
         delegate?.didPressExpandCollapseButton(self)
     }
     

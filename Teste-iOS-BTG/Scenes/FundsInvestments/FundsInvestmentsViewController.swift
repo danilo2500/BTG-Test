@@ -94,7 +94,9 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
     }
     
     private func setupNavigationBar() {
-        navigationController?.navigationBar.setGradientBackground()
+        guard let colorOne = UIColor(named: "gradientOne"),
+            let colorTwo = UIColor(named: "gradientTwo") else { return }
+        navigationController?.navigationBar.setGradientBackground(colors: [colorOne, colorTwo])
     }
     
     func fetchFunds() {
@@ -217,7 +219,9 @@ extension FundsInvestmentsViewController: ExpandableHeaderDelegate {
     func didPressExpandCollapseButton(_ cell: UITableViewCell) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         displayedFunds[indexPath.row].isShowingDetail.toggle()
-        tableView.reloadData()
+        tableView.beginUpdates()
+        tableView.endUpdates()
+        
     }
 }
 

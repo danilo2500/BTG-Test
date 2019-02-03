@@ -39,6 +39,7 @@
                                         <color key="backgroundColor" name="btg_blue"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="5" id="58H-zj-qyX"/>
+                                            <constraint firstAttribute="height" constant="75" id="Hi8-Hv-NvR"/>
                                         </constraints>
                                         <viewLayoutGuide key="safeArea" id="ldR-y6-i1G"/>
                                     </view>
@@ -128,12 +129,11 @@
                                     <constraint firstItem="cHM-dF-fwl" firstAttribute="top" secondItem="5e6-Wh-WVT" secondAttribute="bottom" constant="-1" id="a8a-It-hLZ"/>
                                     <constraint firstItem="cHM-dF-fwl" firstAttribute="leading" secondItem="5e6-Wh-WVT" secondAttribute="leading" id="cxS-rh-Cjk"/>
                                     <constraint firstAttribute="trailing" secondItem="DYC-Tb-9rq" secondAttribute="trailing" constant="24" id="fwl-Rw-CYy"/>
-                                    <constraint firstItem="Jvy-6S-mFd" firstAttribute="height" secondItem="lbT-sT-VA1" secondAttribute="height" multiplier="0.5" id="hLc-U1-TLa"/>
                                     <constraint firstItem="5e6-Wh-WVT" firstAttribute="top" secondItem="lbT-sT-VA1" secondAttribute="top" constant="15" id="kwg-Xv-TUv"/>
                                     <constraint firstAttribute="trailing" secondItem="5e6-Wh-WVT" secondAttribute="trailing" constant="40" id="lqQ-56-8L3"/>
                                     <constraint firstItem="DYC-Tb-9rq" firstAttribute="top" secondItem="lbT-sT-VA1" secondAttribute="top" constant="-3" id="mbB-PO-Ne1"/>
                                     <constraint firstItem="Jvy-6S-mFd" firstAttribute="leading" secondItem="lbT-sT-VA1" secondAttribute="leading" id="qe0-8h-tpA"/>
-                                    <constraint firstAttribute="height" constant="150" id="uHc-Gf-zw9"/>
+                                    <constraint firstAttribute="height" priority="750" constant="150" id="uHc-Gf-zw9"/>
                                     <constraint firstItem="qmR-DA-AHn" firstAttribute="leading" secondItem="lbT-sT-VA1" secondAttribute="leading" constant="20" id="vNj-sg-1F8"/>
                                 </constraints>
                             </view>
