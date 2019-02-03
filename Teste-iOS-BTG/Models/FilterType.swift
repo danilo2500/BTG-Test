@@ -38,6 +38,15 @@ extension FilterType {
     enum OrderByType {
         case maxRescue
         case minRescue
+        
+        var description: String {
+            switch self {
+            case .maxRescue:
+                return "Maior Resgate"
+            case .minRescue:
+                return "Menor Resgate"
+            }
+        }
     }
 }
 
