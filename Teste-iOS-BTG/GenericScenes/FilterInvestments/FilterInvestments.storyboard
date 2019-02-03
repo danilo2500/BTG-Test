@@ -13,7 +13,7 @@
         <array key="SourceSansPro-Bold.otf">
             <string>SourceSansPro-Bold</string>
         </array>
-        <array key="SourceSansPro-Regular.ttf">
+        <array key="SourceSansPro-Regular.otf">
             <string>SourceSansPro-Regular</string>
         </array>
         <array key="SourceSansPro-Semibold.otf">
@@ -67,6 +67,7 @@
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Placeholder" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1kd-Jd-zFY" customClass="UnderlineTextField" customModule="Teste_iOS_BTG" customModuleProvider="target">
                                                     <rect key="frame" x="15" y="39" width="345" height="15"/>
                                                     <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
@@ -102,6 +103,9 @@
                                 <state key="normal" title="FILTRAR">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="didPressFilter:" destination="vB2-cs-If6" eventType="touchUpInside" id="seJ-Re-nmD"/>
+                                </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bw7-YB-eCJ">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -119,6 +123,9 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="closeIcon" id="0O0-8l-Q0P">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="didPressDismiss:" destination="vB2-cs-If6" id="sIg-ub-B7f"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>

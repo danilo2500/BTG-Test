@@ -28,15 +28,7 @@ class FilterInvestmentsPresenter: FilterInvestmentsPresentationLogic {
                 for type in types {
                     risks.append(type)
                 }
-            case .category:
-                filters.append(filterType)
-            case .minimumApplication:
-                filters.append(filterType)
-            case .rescue:
-                filters.append(filterType)
-            case .manager:
-                filters.append(filterType)
-            case .orderBy:
+            default:
                 filters.append(filterType)
             }
         }
