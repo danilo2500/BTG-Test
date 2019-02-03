@@ -70,7 +70,8 @@ class OptionCell: UITableViewCell {
 extension OptionCell: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let viewModel = viewModel,
-            let response = textField.text else { return }
+            let response = textField.text,
+            !response.isEmpty else { return }
         
         switch viewModel.filterType {
         case .category:
