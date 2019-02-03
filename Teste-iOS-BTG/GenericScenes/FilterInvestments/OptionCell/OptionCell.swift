@@ -118,6 +118,7 @@ extension OptionCell: UIPickerViewDelegate, UIPickerViewDataSource {
         
         switch viewModel.filterType {
         case .orderBy(let types):
+            textField.text = types[row].description
             delegate?.didChoose(response: types[row], forType: viewModel.filterType)
         default: break
         }
