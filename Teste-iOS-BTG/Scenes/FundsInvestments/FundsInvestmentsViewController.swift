@@ -20,6 +20,7 @@ protocol FundsInvestmentsDisplayLogic: class {
 class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayLogic {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var interactor: FundsInvestmentsBusinessLogic?
     var router: (NSObjectProtocol & FundsInvestmentsRoutingLogic)?
@@ -92,11 +93,14 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
     }
     
     func fetchFunds() {
+        activityIndicator.startAnimating()
         interactor?.fetchFunds(request: FundsInvestments.FetchFunds.Request())
     }
     
     func displayFetchedFunds(viewModel: FundsInvestments.FetchFunds.ViewModel) {
         displayedFunds = viewModel.displayFunds
+        tableView.isHidden = false
+        activityIndicator.stopAnimating()
         tableView.reloadData()
     }
     
