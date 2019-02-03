@@ -13,7 +13,7 @@
         <array key="SourceSansPro-Bold.otf">
             <string>SourceSansPro-Bold</string>
         </array>
-        <array key="SourceSansPro-Regular.otf">
+        <array key="SourceSansPro-Regular.ttf">
             <string>SourceSansPro-Regular</string>
         </array>
         <array key="SourceSansPro-Semibold.otf">
@@ -120,6 +120,9 @@
                                     <navigationItem title="Filtros" id="dAT-9P-ZmK">
                                         <barButtonItem key="leftBarButtonItem" title="Limpar" id="kLo-pn-Rfo">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="didPressClean:" destination="vB2-cs-If6" id="JHS-Tc-u63"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="closeIcon" id="0O0-8l-Q0P">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -107,7 +107,7 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
     func errorFetchingFunds(message: String) {}
     
     @IBAction func didPressFilterButton(_ sender: Any) {
-        router?.routeToFilterInvestments(filterComponents: filterComponents)
+        router?.routeToFilterInvestments()
     }
     
 }

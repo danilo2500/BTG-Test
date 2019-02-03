@@ -36,21 +36,26 @@ class OptionCell: UITableViewCell {
         case .category:
             placeholder = "Todos(as)"
             textField.keyboardType = .asciiCapable
+            textField.pickerView = nil
         case .minimumApplication:
             placeholder = "Todos(as)"
             textField.keyboardType = .decimalPad
+            textField.pickerView = nil
         case .rescue:
             placeholder = "Todos(as)"
             textField.keyboardType = .numberPad
+            textField.pickerView = nil
         case .manager:
             placeholder = "Todos(as)"
             textField.keyboardType = .asciiCapable
-        case .orderBy(let types):
+            textField.pickerView = nil
+        case .orderBy:
             placeholder = "Nenhum"
             textField.pickerView = pickerView
         default: break
         }
         textField.placeholder = placeholder
+        textField.text = ""
         titleLabel.text = viewModel.filterType.description.uppercased()
     }
     

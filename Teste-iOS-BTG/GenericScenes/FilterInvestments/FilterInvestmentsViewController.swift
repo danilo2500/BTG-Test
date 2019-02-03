@@ -69,8 +69,12 @@ class FilterInvestmentsViewController: UIViewController, FilterInvestmentsDispla
     
     func displayFilters(viewModel: FilterInvestmentsModels.Components.ViewModel) {
         displayedFilters = viewModel
-        collectionView.reloadData()
-        tableView.reloadData()
+    }
+    
+    @IBAction func didPressClean(_ sender: Any) {
+        responses = FilterInvestmentsModels.Response()
+        collectionView.reloadItems(at: collectionView.indexPathsForVisibleItems)
+        tableView.reloadRows(at: tableView.indexPathsForVisibleRows!, with: .automatic)
     }
     
     @IBAction func didPressDismiss(_ sender: Any) {
@@ -112,9 +116,14 @@ extension FilterInvestmentsViewController: UICollectionViewDataSource, UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RiskCollectionViewCellModels.RiskCell.ViewModel.reuseIdentifier, for: indexPath) as! RiskCollectionViewCell
         cell.delegate = self
+        
         if let displayRisk = displayedFilters?.risks[indexPath.row] {
-            cell.viewModel = RiskCollectionViewCellModels.Risk.ViewModel(color: displayRisk.representativeColor, title: displayRisk.titleDescription)
+            cell.viewModel = RiskCollectionViewCellModels.Risk.ViewModel(
+                color: displayRisk.representativeColor,
+                title: displayRisk.titleDescription
+            )
         }
+        
         return cell
     }
     

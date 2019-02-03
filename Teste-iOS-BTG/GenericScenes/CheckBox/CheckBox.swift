@@ -14,7 +14,11 @@ protocol CheckBoxDelegate: class {
 
 class CheckBox: UIButton {
 
-    var isChecked: Bool = true
+    var isChecked: Bool = true {
+        didSet{
+            updateCheckBoxImage()
+        }
+    }
     weak var delegate: CheckBoxDelegate?
     
     override func awakeFromNib() {
@@ -26,12 +30,10 @@ class CheckBox: UIButton {
         addBorder(width: 1, color: UIColor.btg_blue)
         cornerRadius = 5
         tintColor = .white
-        updateCheckBoxImage()
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         isChecked.toggle()
-        updateCheckBoxImage()
         delegate?.valueDidChange(value: isChecked)
     }
     

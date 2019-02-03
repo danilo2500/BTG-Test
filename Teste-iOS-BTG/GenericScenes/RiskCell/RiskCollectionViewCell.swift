@@ -27,6 +27,7 @@ class RiskCollectionViewCell: UICollectionViewCell {
     }
     
     func didSetViewModel() {
+        checkBox.isChecked = true
         guard let viewModel = viewModel else { return }
         riskLine.backgroundColor = viewModel.color
         riskLabel.text = viewModel.title.uppercased()
