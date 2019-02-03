@@ -31,6 +31,6 @@ class FundProfitability: Codable {
 class FundDetail: Codable {
     
     let manager: String?
-    let investimentQuota: String?
+    let rescueQuota: String?
     let categoryDescription: String?
 }

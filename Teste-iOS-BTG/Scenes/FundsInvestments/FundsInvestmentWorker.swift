@@ -43,12 +43,40 @@ class FundsInvestmentsWorker {
         completion(FundsInvestments.FetchFunds.Response(funds: filtered, error: false, message: nil))
     }
     
-    func filterFunds(request: FundsInvestments.FetchFunds.Request, funds: [FundModel], completion: @escaping(responseHandler)) {
+    func filterFunds(request: FundsInvestments.FetchFunds.Request, funds: [FundModel],completion: @escaping(responseHandler)) {
+        guard let filters = request.filter else {
+            completion(FundsInvestments.FetchFunds.Response(funds: funds, error: false, message: nil))
+            return
+        }
+        
         let filtered = funds.filter({ (fund) -> Bool in
-            if fund.detail?.categoryDescription?.localizedCaseInsensitiveContains(request.category ?? "") ?? false {
-                return true
+            if let productFilter = request.product,
+                let fundProduct = fund.product,
+                !fundProduct.localizedCaseInsensitiveContains(productFilter) {
+                return false
             }
-            return false
+            if let categoryFilter = filters.category,
+                let fundCategory = fund.detail?.categoryDescription,
+                !fundCategory.localizedCaseInsensitiveContains(categoryFilter) {
+                return false
+            }
+            if let managerFilter = filters.manager,
+                let fundManager = fund.detail?.manager,
+                !fundManager.localizedCaseInsensitiveContains(managerFilter) {
+                return false
+            }
+            if let rescueFilter = filters.rescue,
+                let fundRescue = fund.detail?.rescueQuota?.split(separator: "+").last,
+                rescueFilter < Int(fundRescue) ?? 0 {
+                return false
+            }
+            for risk in filters.risks {
+                if risk.value == false,
+                    fund.riskLevel == risk.key.rawValue {
+                    return false
+                }
+            }
+            return true
         })
         completion(FundsInvestments.FetchFunds.Response(funds: filtered, error: false, message: nil))
     }

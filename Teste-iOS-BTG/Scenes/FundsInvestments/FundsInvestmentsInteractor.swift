@@ -20,7 +20,7 @@ protocol FundsInvestmentsBusinessLogic {
 }
 
 protocol FundsInvestmentsDataStore {
-    
+
     var fundsResponse: FundsInvestments.FetchFunds.Response? { get }
 
 }
@@ -57,9 +57,14 @@ class FundsInvestmentsInteractor: FundsInvestmentsBusinessLogic, FundsInvestment
     
     func filterFunds(request: FundsInvestments.FetchFunds.Request) {
  
+        if request.filter == nil,
+            let fundsResponse = fundsResponse {
+            presenter?.presentFunds(response: fundsResponse)
+        }
+        
         guard let fundsStored = fundsResponse?.funds else { return }
         worker = FundsInvestmentsWorker()
-        worker!.filterFunds(request: request, funds: fundsStored, completion: { [weak self] (response) in
+        worker?.filterFunds(request: request, funds: fundsStored, completion: { [weak self] (response) in
             self?.presenter?.presentFunds(response: response)
         })
     }

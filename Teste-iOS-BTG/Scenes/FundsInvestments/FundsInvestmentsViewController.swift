@@ -53,18 +53,6 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
         router.dataStore = interactor
     }
     
-    // MARK: Routing
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-        if let scene = segue.identifier {
-            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-            if let router = router, router.responds(to: selector) {
-                router.perform(selector, with: segue)
-            }
-        }
-    }
-    
     // MARK: View lifecycle
     
     override func viewDidLoad() {
@@ -104,8 +92,7 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
     }
     
     func fetchFunds() {
-        let request = FundsInvestments.FetchFunds.Request()
-        interactor?.fetchFunds(request: request)
+        interactor?.fetchFunds(request: FundsInvestments.FetchFunds.Request())
     }
     
     func displayFetchedFunds(viewModel: FundsInvestments.FetchFunds.ViewModel) {
@@ -129,6 +116,14 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
         router?.routeToFilterInvestments(filterComponents: filterComponents)
     }
     
+}
+
+extension FundsInvestmentsViewController: FilterInvestmentsRouterDelegate {
+    func applyFilters(_ filters: FilterInvestmentsModels.Response) {
+        var request = FundsInvestments.FetchFunds.Request()
+        request.filter = filters
+        interactor?.filterFunds(request: request)
+    }
 }
 
 extension FundsInvestmentsViewController: UITableViewDataSource, UITableViewDelegate {

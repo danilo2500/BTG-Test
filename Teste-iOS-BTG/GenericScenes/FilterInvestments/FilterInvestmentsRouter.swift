@@ -13,16 +13,26 @@
 import UIKit
 
 @objc protocol FilterInvestmentsRoutingLogic {
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routeToPreviousViewController(source: FilterInvestmentsViewController)
+}
+
+protocol FilterInvestmentsRouterDelegate: class {
+    func applyFilters(_ filters: FilterInvestmentsModels.Response)
 }
 
 protocol FilterInvestmentsDataPassing {
     var dataStore: FilterInvestmentsDataStore! { get set }
+    var delegate: FilterInvestmentsRouterDelegate? { get set }
 }
 
 class FilterInvestmentsRouter: NSObject, FilterInvestmentsDataPassing, FilterInvestmentsRoutingLogic {
-
+    
+    var delegate: FilterInvestmentsRouterDelegate?
     var dataStore: FilterInvestmentsDataStore!
     weak var viewController: FilterInvestmentsViewController?
-    
+
+    func routeToPreviousViewController(source: FilterInvestmentsViewController) {
+        delegate?.applyFilters(source.responses)
+        source.dismiss(animated: true, completion: nil)
+    }
 }

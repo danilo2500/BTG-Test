@@ -12,6 +12,10 @@ protocol FilterInvestmentsDisplayLogic: class {
     func displayFilters(viewModel: FilterInvestmentsModels.Components.ViewModel)
 }
 
+protocol FilterInvestmentsDelegate {
+    func applyFilters(filterResponses: FilterInvestmentsModels.Response )
+}
+
 class FilterInvestmentsViewController: UIViewController, FilterInvestmentsDisplayLogic {
     
     var interactor: FilterInvestmentsBusinessLogic?
@@ -67,6 +71,14 @@ class FilterInvestmentsViewController: UIViewController, FilterInvestmentsDispla
         displayedFilters = viewModel
         collectionView.reloadData()
         tableView.reloadData()
+    }
+    
+    @IBAction func didPressDismiss(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func didPressFilter(_ sender: Any) {
+        router?.routeToPreviousViewController(source: self)
     }
 }
 

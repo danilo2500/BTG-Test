@@ -53,6 +53,7 @@ class FundsInvestmentsRouter: NSObject, FundsInvestmentsRoutingLogic {
         let storyboard = UIStoryboard(name: "FilterInvestments", bundle: nil)
         let destinationVC = storyboard.instantiateInitialViewController() as! FilterInvestmentsViewController
         destinationVC.router!.dataStore.filterComponents = filterComponents
+        destinationVC.router?.delegate = viewController
         navigateToFilterInvestments(source: viewController!, destination: destinationVC)
     }
     

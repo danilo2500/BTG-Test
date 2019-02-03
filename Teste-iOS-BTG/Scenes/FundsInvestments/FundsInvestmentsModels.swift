@@ -18,7 +18,7 @@ enum FundsInvestments {
     enum FetchFunds {
         struct Request {
             var product: String? = nil
-            var category: String? = nil
+            var filter: FilterInvestmentsModels.Response? = nil
         }
         
         struct Response {
