@@ -9,6 +9,7 @@ target 'Teste-iOS-BTG' do
   pod 'Moya'
   pod 'Presentr'
   pod 'IQKeyboardManagerSwift'
+  pod 'AMTextFieldPickerExtension'
 
   target 'Teste-iOS-BTGTests' do
     inherit! :search_paths
