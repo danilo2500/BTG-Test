@@ -107,16 +107,6 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
     func errorFetchingFunds(message: String) {}
     
     @IBAction func didPressFilterButton(_ sender: Any) {
-        
-        let filterTypes: [FilterType] = [
-            .risk(types: [.conservative, .moderate, .sophisticated]),
-            .category,
-            .minimumApplication,
-            .rescue,
-            .manager,
-            .orderBy(orderByTypes: [.maxRescue, .minRescue])
-        ]
-        let filterComponents = FilterInvestmentsModels.Components.Response(filterTypes: filterTypes)
         router?.routeToFilterInvestments(filterComponents: filterComponents)
     }
     

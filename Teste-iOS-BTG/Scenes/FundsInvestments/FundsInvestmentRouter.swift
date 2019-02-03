@@ -16,7 +16,7 @@ import Presentr
 
 protocol FundsInvestmentsRoutingLogic
 {
-    func routeToFilterInvestments(filterComponents: FilterInvestmentsModels.Components.Response)
+    func routeToFilterInvestments()
 }
 
 protocol FundsInvestmentsDataPassing
@@ -49,7 +49,17 @@ class FundsInvestmentsRouter: NSObject, FundsInvestmentsRoutingLogic {
         return presentr
     }()
     
-    func routeToFilterInvestments(filterComponents: FilterInvestmentsModels.Components.Response) {
+    func routeToFilterInvestments() {
+        let filterTypes: [FilterType] = [
+            .risk(types: [.conservative, .moderate, .sophisticated]),
+            .category,
+            .minimumApplication,
+            .rescue,
+            .manager,
+            .orderBy(orderByTypes: [.maxRescue, .minRescue])
+        ]
+        let filterComponents = FilterInvestmentsModels.Components.Response(filterTypes: filterTypes)
+        
         let storyboard = UIStoryboard(name: "FilterInvestments", bundle: nil)
         let destinationVC = storyboard.instantiateInitialViewController() as! FilterInvestmentsViewController
         destinationVC.router!.dataStore.filterComponents = filterComponents
