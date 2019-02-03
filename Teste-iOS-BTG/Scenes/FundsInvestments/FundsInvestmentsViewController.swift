@@ -65,6 +65,7 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
     private func configureLayout() {
         registerNibFiles()
         configureTableView()
+        setupNavigationBar()
     }
     
     private func registerNibFiles() {
@@ -90,6 +91,10 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
     private func configureTableView() {
         tableView.estimatedRowHeight = ExpandableHeaderViewModels.ExpandableHeader.ViewModel.closedCellHeight
         tableView.rowHeight = UITableView.automaticDimension
+    }
+    
+    private func setupNavigationBar() {
+        navigationController?.navigationBar.setGradientBackground()
     }
     
     func fetchFunds() {
