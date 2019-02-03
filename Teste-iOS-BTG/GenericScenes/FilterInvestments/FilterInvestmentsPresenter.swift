@@ -19,31 +19,28 @@ class FilterInvestmentsPresenter: FilterInvestmentsPresentationLogic {
     // MARK: Do something
 
     func presentFilterOptions(response: FilterInvestmentsModels.Components.Response) {
-        var riskOptions: [FilterInvestmentsModels.Components.ViewModel.RiskOption] = []
-        var filterOptions: [FilterInvestmentsModels.Components.ViewModel.FilterOption] = []
+        var risks: [RiskModel] = []
+        var filters: [FilterType] = []
         
         for filterType in response.filterTypes {
             switch filterType {
             case .risk(let types):
                 for type in types {
-                    riskOptions.append(FilterInvestmentsModels.Components.ViewModel.RiskOption(
-                        risk: type,
-                        isChecked: true
-                    ))
+                    risks.append(type)
                 }
             case .category:
-                filterOptions.append(FilterInvestmentsModels.Components.ViewModel.FilterOption(filterType: filterType, response: nil))
+                filters.append(filterType)
             case .minimumApplication:
-                filterOptions.append(FilterInvestmentsModels.Components.ViewModel.FilterOption(filterType: filterType, response: nil))
+                filters.append(filterType)
             case .rescue:
-                filterOptions.append(FilterInvestmentsModels.Components.ViewModel.FilterOption(filterType: filterType, response: nil))
+                filters.append(filterType)
             case .manager:
-                filterOptions.append(FilterInvestmentsModels.Components.ViewModel.FilterOption(filterType: filterType, response: nil))
-            case .orderBy(let types):
-                filterOptions.append(FilterInvestmentsModels.Components.ViewModel.FilterOption(filterType: filterType, response: nil))
+                filters.append(filterType)
+            case .orderBy:
+                filters.append(filterType)
             }
         }
-        let viewModel = FilterInvestmentsModels.Components.ViewModel(riskOptions: riskOptions, filterOptions: filterOptions)
+        let viewModel = FilterInvestmentsModels.Components.ViewModel(risks: risks, filters: filters)
         viewController?.displayFilters(viewModel: viewModel)
     }
 }

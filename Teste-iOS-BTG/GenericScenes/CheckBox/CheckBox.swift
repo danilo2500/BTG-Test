@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol CheckBoxDelegate: class {
+    func valueDidChange(value: Bool)
+}
+
 class CheckBox: UIButton {
 
     var isChecked: Bool = true
+    weak var delegate: CheckBoxDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,6 +32,7 @@ class CheckBox: UIButton {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         isChecked.toggle()
         updateCheckBoxImage()
+        delegate?.valueDidChange(value: isChecked)
     }
     
     private func updateCheckBoxImage() {

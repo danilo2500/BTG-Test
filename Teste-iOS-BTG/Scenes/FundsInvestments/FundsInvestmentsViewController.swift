@@ -123,7 +123,7 @@ class FundsInvestmentsViewController: UIViewController, FundsInvestmentsDisplayL
             .minimumApplication,
             .rescue,
             .manager,
-            .orderBy(types: [.maxRescue, .minRescue])
+            .orderBy(orderByTypes: [.maxRescue, .minRescue])
         ]
         let filterComponents = FilterInvestmentsModels.Components.Response(filterTypes: filterTypes)
         router?.routeToFilterInvestments(filterComponents: filterComponents)

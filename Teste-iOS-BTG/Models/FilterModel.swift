@@ -8,13 +8,13 @@
 
 import Foundation
 
-enum FilterType{
+enum FilterType {
     case risk(types: [RiskModel])
     case category
     case minimumApplication
     case rescue
     case manager
-    case orderBy(types: [OrderByType])
+    case orderBy(orderByTypes: [OrderByType])
     
     var description: String {
         switch self {
@@ -34,19 +34,16 @@ enum FilterType{
     }
 }
 
-extension FilterType {
-    enum OrderByType {
-        case maxRescue
-        case minRescue
-        
-        var description: String {
-            switch self {
-            case .maxRescue:
-                return "Maior Resgate"
-            case .minRescue:
-                return "Menor Resgate"
-            }
+enum OrderByType {
+    case maxRescue
+    case minRescue
+    
+    var description: String {
+        switch self {
+        case .maxRescue:
+            return "Maior Resgate"
+        case .minRescue:
+            return "Menor Resgate"
         }
     }
 }
-

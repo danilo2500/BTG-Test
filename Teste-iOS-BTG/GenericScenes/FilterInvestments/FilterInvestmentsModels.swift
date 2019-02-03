@@ -18,18 +18,17 @@ class FilterInvestmentsModels {
         }
         
         struct ViewModel {
-            struct RiskOption {
-                let risk: RiskModel
-                var isChecked: Bool
-            }
-            
-            struct FilterOption {
-                let filterType: FilterType
-                var response: Any?
-            }
-            
-            let riskOptions: [RiskOption]
-            let filterOptions: [FilterOption]
+            let risks: [RiskModel]
+            let filters: [FilterType]
         }
+    }
+    
+    class Response {
+        var risks: [RiskModel: Bool] = [:] 
+        var category: String?
+        var minimumApplication: Double?
+        var rescue: Int?
+        var manager: String?
+        var orderBy: OrderByType?
     }
 }

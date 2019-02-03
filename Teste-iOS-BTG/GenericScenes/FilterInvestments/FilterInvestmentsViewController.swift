@@ -21,6 +21,7 @@ class FilterInvestmentsViewController: UIViewController, FilterInvestmentsDispla
     @IBOutlet weak var tableView: UITableView!
     
     var displayedFilters: FilterInvestmentsModels.Components.ViewModel?
+    var responses = FilterInvestmentsModels.Response()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -72,13 +73,15 @@ class FilterInvestmentsViewController: UIViewController, FilterInvestmentsDispla
 extension FilterInvestmentsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return displayedFilters?.filterOptions.count ?? 0
+        return displayedFilters?.filters.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: OptionCellModels.OptionCell.ViewModel.reuseIdentifier, for: indexPath) as! OptionCell
-        if let displayFilter = displayedFilters?.filterOptions[indexPath.row] {
-            cell.viewModel = OptionCellModels.Option.ViewModel(filterType: displayFilter.filterType)
+        cell.delegate = self
+        
+        if let displayFilter = displayedFilters?.filters[indexPath.row] {
+            cell.viewModel = OptionCellModels.Option.ViewModel(filterType: displayFilter)
         }
         
         return cell
@@ -91,13 +94,14 @@ extension FilterInvestmentsViewController: UITableViewDataSource, UITableViewDel
 
 extension FilterInvestmentsViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return displayedFilters?.riskOptions.count ?? 0
+        return displayedFilters?.risks.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RiskCollectionViewCellModels.RiskCell.ViewModel.reuseIdentifier, for: indexPath) as! RiskCollectionViewCell
-        if let displayRisk = displayedFilters?.riskOptions[indexPath.row] {
-            cell.viewModel = RiskCollectionViewCellModels.Risk.ViewModel(color: displayRisk.risk.representativeColor, title: displayRisk.risk.titleDescription)
+        cell.delegate = self
+        if let displayRisk = displayedFilters?.risks[indexPath.row] {
+            cell.viewModel = RiskCollectionViewCellModels.Risk.ViewModel(color: displayRisk.representativeColor, title: displayRisk.titleDescription)
         }
         return cell
     }
@@ -109,4 +113,33 @@ extension FilterInvestmentsViewController: UICollectionViewDataSource, UICollect
         )
     }
     
+}
+
+extension FilterInvestmentsViewController: OptionCellDelegate {
+    func didChoose(response: Any, forType type: FilterType) {
+        
+        switch type {
+        case .category:
+            responses.category = response as? String
+        case .minimumApplication:
+            responses.minimumApplication = response as? Double
+        case .rescue:
+            responses.rescue = response as? Int
+        case .manager:
+            responses.manager = response as? String
+        case .orderBy:
+            responses.orderBy = response as? OrderByType
+        default: break
+        }
+    }
+}
+
+extension FilterInvestmentsViewController: RiskCollectionViewCellDelegate {
+    func didChoose(value: Bool, _ cell: RiskCollectionViewCell) {
+        if let indexPath = collectionView.indexPath(for: cell),
+            let riskType = displayedFilters?.risks[indexPath.row] {
+            responses.risks[riskType] = value
+        }
+        
+    }
 }
