@@ -43,7 +43,9 @@
                         <viewLayoutGuide key="safeArea" id="c3V-ee-8gh"/>
                     </view>
                     <navigationItem key="navigationItem" title="Fundos de Investimentos" id="tUg-wA-Wjn">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="dJ9-xr-agA"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="filter_icon" id="TaS-FZ-2a8">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="didPressFilterButton:" destination="6UZ-1t-2fr" id="l6O-Dr-wM2"/>
                             </connections>

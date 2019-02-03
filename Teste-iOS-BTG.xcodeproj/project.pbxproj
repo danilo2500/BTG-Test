@@ -253,7 +253,6 @@
 				55F4252522022797008B3915 /* Helpers */,
 				556C31002201F2DD00CCCFC5 /* Networking */,
 				A279EFC821B1672300E39E1F /* Fonts */,
-				A279EFA121B1667800E39E1F /* Assets.xcassets */,
 				555EDB8F2201F52900977D96 /* Constants.swift */,
 				A279EFE321B1683F00E39E1F /* Colors.swift */,
 			);
@@ -388,6 +387,7 @@
 				556C30E82201332900CCCFC5 /* Scenes */,
 				55F4253122027BD7008B3915 /* GenericScenes */,
 				A279EF9A21B1667600E39E1F /* AppDelegate.swift */,
+				A279EFA121B1667800E39E1F /* Assets.xcassets */,
 				A279EFA321B1667800E39E1F /* LaunchScreen.storyboard */,
 				A279EFA621B1667800E39E1F /* Info.plist */,
 			);
