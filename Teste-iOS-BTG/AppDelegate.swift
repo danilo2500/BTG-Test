@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,13 +19,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         setupInitialViewController()
+        setupKeyboardManager()
         
         return true
     }
     
-    func setupInitialViewController() {
+    private func setupInitialViewController() {
         let storyboard = UIStoryboard(name: "FundsInvestments", bundle: nil)
         window?.rootViewController = storyboard.instantiateInitialViewController()
+    }
+    
+    private func setupKeyboardManager() {
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = false
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
