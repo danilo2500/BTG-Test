@@ -93,7 +93,7 @@ class FundsInvestmentsWorker {
                     guard let fundRescueOne = fundOne.detail?.rescueQuota?.split(separator: "+").last,
                         let fundRescueTwo = fundTwo.detail?.rescueQuota?.split(separator: "+").last else { return false }
                     
-                    return Int(fundRescueTwo)! > Int(fundRescueOne)!
+                    return Int(fundRescueTwo) ?? 0 > Int(fundRescueOne) ?? 0
                 }
             }
         }
