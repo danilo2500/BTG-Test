@@ -49,7 +49,7 @@ class FundsInvestmentsWorker {
             return
         }
         
-        let filtered = funds.filter({ (fund) -> Bool in
+        var filtered = funds.filter({ (fund) -> Bool in
             if let productFilter = request.product,
                 let fundProduct = fund.product,
                 !fundProduct.localizedCaseInsensitiveContains(productFilter) {
@@ -78,6 +78,25 @@ class FundsInvestmentsWorker {
             }
             return true
         })
+        
+        if let orderByFilter = filters.orderBy {
+            switch orderByFilter {
+            case .maxRescue:
+                filtered.sort { (fundOne, fundTwo) -> Bool in
+                    guard let fundRescueOne = fundOne.detail?.rescueQuota?.split(separator: "+").last,
+                        let fundRescueTwo = fundTwo.detail?.rescueQuota?.split(separator: "+").last else { return false }
+                    
+                    return Int(fundRescueOne)! > Int(fundRescueTwo)!
+                }
+            case .minRescue:
+                filtered.sort { (fundOne, fundTwo) -> Bool in
+                    guard let fundRescueOne = fundOne.detail?.rescueQuota?.split(separator: "+").last,
+                        let fundRescueTwo = fundTwo.detail?.rescueQuota?.split(separator: "+").last else { return false }
+                    
+                    return Int(fundRescueTwo)! > Int(fundRescueOne)!
+                }
+            }
+        }
         completion(FundsInvestments.FetchFunds.Response(funds: filtered, error: false, message: nil))
     }
     

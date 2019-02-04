@@ -9,7 +9,7 @@
 import XCTest
 @testable import Teste_iOS_BTG
 
-class Teste_iOS_BTGTests: XCTestCase {
+class Teste_iOS_BTGFormatterTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
