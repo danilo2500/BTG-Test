@@ -19,16 +19,20 @@ class Teste_iOS_BTGTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testPercentageFormatter() {
+        let value = Double(20.19301)
+        
+        let valueFormatted = FormatterUtils.formatPercentage(value: value)
+        
+        XCTAssertEqual(valueFormatted, "20,19%")
     }
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testDateFormatter() {
+       
+        let value = "2019-01-31T00:00:00.000-0200"
+        
+        let valueFormatted = FormatterUtils.formatDate(dateString: value)
+        
+        XCTAssertEqual(valueFormatted, "31/01/2019")
     }
-
 }

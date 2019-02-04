@@ -28,6 +28,7 @@ class FormatterUtils {
         formatter.locale = Locale(identifier: "pt-BR")
         formatter.numberStyle = .currency
         formatter.currencySymbol = ""
+        
         return formatter.string(from: NSNumber(value: value))
     }
     
@@ -36,7 +37,7 @@ class FormatterUtils {
         let decimal = NSNumber(value: value / 100 )
         
         let numberFormatter = NumberFormatter()
-        numberFormatter.decimalSeparator = Locale.current.decimalSeparator
+        numberFormatter.decimalSeparator = ","
         numberFormatter.maximumFractionDigits = 2
         numberFormatter.roundingMode = .halfUp
         numberFormatter.numberStyle = .percent
